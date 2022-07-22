@@ -1,0 +1,128 @@
+[
+  {
+    "level": "INFO",
+    "message": "Start JSON generation. Platform version: 26 min SDK version: arm64-v8a",
+    "file": "D:\\out\\p3\\AndroidGLM\\opencvpnp\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "debug|arm64-v8a"
+  },
+  {
+    "level": "INFO",
+    "message": "Trying to locate CMake in local SDK repository.",
+    "file": "D:\\out\\p3\\AndroidGLM\\opencvpnp\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "debug|arm64-v8a"
+  },
+  {
+    "level": "INFO",
+    "message": "- CMake found in SDK at \u0027E:\\software\\android\\cmake\\3.10.2.4988404\u0027 had version \u00273.10.2\u0027",
+    "file": "D:\\out\\p3\\AndroidGLM\\opencvpnp\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "debug|arm64-v8a"
+  },
+  {
+    "level": "INFO",
+    "message": "CMake \u00273.6.0\u0027 found in SDK did not match requested version \u00273.10.2\u0027.",
+    "file": "D:\\out\\p3\\AndroidGLM\\opencvpnp\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "debug|arm64-v8a"
+  },
+  {
+    "level": "INFO",
+    "message": "rebuilding JSON D:\\out\\p3\\AndroidGLM\\opencvpnp\\.cxx\\cmake\\debug\\arm64-v8a\\android_gradle_build.json due to:",
+    "file": "D:\\out\\p3\\AndroidGLM\\opencvpnp\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "debug|arm64-v8a"
+  },
+  {
+    "level": "INFO",
+    "message": "- a dependent build file changed",
+    "file": "D:\\out\\p3\\AndroidGLM\\opencvpnp\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "debug|arm64-v8a"
+  },
+  {
+    "level": "INFO",
+    "message": "  - D:\\out\\p3\\AndroidGLM\\opencvpnp\\src\\main\\cpp\\CMakeLists.txt",
+    "file": "D:\\out\\p3\\AndroidGLM\\opencvpnp\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "debug|arm64-v8a"
+  },
+  {
+    "level": "INFO",
+    "message": "keeping json folder \u0027D:\\out\\p3\\AndroidGLM\\opencvpnp\\.cxx\\cmake\\debug\\arm64-v8a\u0027 but regenerating project",
+    "file": "D:\\out\\p3\\AndroidGLM\\opencvpnp\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "debug|arm64-v8a"
+  },
+  {
+    "level": "INFO",
+    "message": "executing cmake Executable : E:\\software\\android\\cmake\\3.10.2.4988404\\bin\\cmake.exe\narguments : \n-HD:\\out\\p3\\AndroidGLM\\opencvpnp\\src\\main\\cpp\n-DCMAKE_CXX_FLAGS\u003d-std\u003dc++14\n-DCMAKE_FIND_ROOT_PATH\u003dD:\\out\\p3\\AndroidGLM\\opencvpnp\\.cxx\\cmake\\debug\\prefab\\arm64-v8a\\prefab\n-DCMAKE_BUILD_TYPE\u003dDebug\n-DCMAKE_TOOLCHAIN_FILE\u003dE:\\software\\android\\ndk\\21.4.7075529\\build\\cmake\\android.toolchain.cmake\n-DANDROID_ABI\u003darm64-v8a\n-DANDROID_NDK\u003dE:\\software\\android\\ndk\\21.4.7075529\n-DANDROID_PLATFORM\u003dandroid-26\n-DCMAKE_ANDROID_ARCH_ABI\u003darm64-v8a\n-DCMAKE_ANDROID_NDK\u003dE:\\software\\android\\ndk\\21.4.7075529\n-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dD:\\out\\p3\\AndroidGLM\\opencvpnp\\build\\intermediates\\cmake\\debug\\obj\\arm64-v8a\n-DCMAKE_MAKE_PROGRAM\u003dE:\\software\\android\\cmake\\3.10.2.4988404\\bin\\ninja.exe\n-DCMAKE_SYSTEM_NAME\u003dAndroid\n-DCMAKE_SYSTEM_VERSION\u003d26\n-BD:\\out\\p3\\AndroidGLM\\opencvpnp\\.cxx\\cmake\\debug\\arm64-v8a\n-GNinja\njvmArgs : \n\n",
+    "file": "D:\\out\\p3\\AndroidGLM\\opencvpnp\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "debug|arm64-v8a"
+  },
+  {
+    "level": "INFO",
+    "message": "\n",
+    "file": "D:\\out\\p3\\AndroidGLM\\opencvpnp\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "debug|arm64-v8a"
+  },
+  {
+    "level": "INFO",
+    "message": "[\u003d\u003d \"CMake Server\" \u003d\u003d[\n",
+    "file": "D:\\out\\p3\\AndroidGLM\\opencvpnp\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "debug|arm64-v8a"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"supportedProtocolVersions\":[{\"isExperimental\":true,\"major\":1,\"minor\":1}],\"type\":\"hello\"}\n",
+    "file": "D:\\out\\p3\\AndroidGLM\\opencvpnp\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "debug|arm64-v8a"
+  },
+  {
+    "level": "INFO",
+    "message": "]\u003d\u003d \"CMake Server\" \u003d\u003d]\n",
+    "file": "D:\\out\\p3\\AndroidGLM\\opencvpnp\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "debug|arm64-v8a"
+  },
+  {
+    "level": "ERROR",
+    "message": "Not a directory: D:\\out\\p3\\AndroidGLM\\opencvpnp\\src\\main\\cpp",
+    "file": "D:\\out\\p3\\AndroidGLM\\opencvpnp\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "debug|arm64-v8a"
+  },
+  {
+    "level": "INFO",
+    "message": "{\n  \"type\": \"handshake\",\n  \"cookie\": \"gradle-cmake-cookie\",\n  \"protocolVersion\": {\n    \"isExperimental\": true,\n    \"major\": 1,\n    \"minor\": 1\n  },\n  \"sourceDirectory\": \"D:/out/p3/AndroidGLM/opencvpnp/src/main/cpp\",\n  \"buildDirectory\": \"D:/out/p3/AndroidGLM/opencvpnp/.cxx/cmake/debug/arm64-v8a\",\n  \"generator\": \"Ninja\"\n}\n",
+    "file": "D:\\out\\p3\\AndroidGLM\\opencvpnp\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "debug|arm64-v8a"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"gradle-cmake-cookie\",\"errorMessage\":\"Failed to activate protocol version: \\\"CMAKE_HOME_DIRECTORY\\\" is set but incompatible with configured source directory value.\",\"inReplyTo\":\"handshake\",\"type\":\"error\"}\n",
+    "file": "D:\\out\\p3\\AndroidGLM\\opencvpnp\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "debug|arm64-v8a"
+  },
+  {
+    "level": "ERROR",
+    "message": "Failed to activate protocol version: \"CMAKE_HOME_DIRECTORY\" is set but incompatible with configured source directory value.",
+    "file": "D:\\out\\p3\\AndroidGLM\\opencvpnp\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "debug|arm64-v8a"
+  },
+  {
+    "level": "INFO",
+    "message": "{\n  \"type\": \"configure\",\n  \"cacheArguments\": [\n    \"\",\n    \"-DCMAKE_CXX_FLAGS\\u003d-std\\u003dc++14\",\n    \"-DCMAKE_FIND_ROOT_PATH\\u003dD:\\\\out\\\\p3\\\\AndroidGLM\\\\opencvpnp\\\\.cxx\\\\cmake\\\\debug\\\\prefab\\\\arm64-v8a\\\\prefab\",\n    \"-DCMAKE_BUILD_TYPE\\u003dDebug\",\n    \"-DCMAKE_TOOLCHAIN_FILE\\u003dE:\\\\software\\\\android\\\\ndk\\\\21.4.7075529\\\\build\\\\cmake\\\\android.toolchain.cmake\",\n    \"-DANDROID_ABI\\u003darm64-v8a\",\n    \"-DANDROID_NDK\\u003dE:\\\\software\\\\android\\\\ndk\\\\21.4.7075529\",\n    \"-DANDROID_PLATFORM\\u003dandroid-26\",\n    \"-DCMAKE_ANDROID_ARCH_ABI\\u003darm64-v8a\",\n    \"-DCMAKE_ANDROID_NDK\\u003dE:\\\\software\\\\android\\\\ndk\\\\21.4.7075529\",\n    \"-DCMAKE_EXPORT_COMPILE_COMMANDS\\u003dON\",\n    \"-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\\u003dD:\\\\out\\\\p3\\\\AndroidGLM\\\\opencvpnp\\\\build\\\\intermediates\\\\cmake\\\\debug\\\\obj\\\\arm64-v8a\",\n    \"-DCMAKE_MAKE_PROGRAM\\u003dE:\\\\software\\\\android\\\\cmake\\\\3.10.2.4988404\\\\bin\\\\ninja.exe\",\n    \"-DCMAKE_SYSTEM_NAME\\u003dAndroid\",\n    \"-DCMAKE_SYSTEM_VERSION\\u003d26\"\n  ]\n}\n",
+    "file": "D:\\out\\p3\\AndroidGLM\\opencvpnp\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "debug|arm64-v8a"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"errorMessage\":\"Waiting for type \\\"handshake\\\".\",\"inReplyTo\":\"configure\",\"type\":\"error\"}\n",
+    "file": "D:\\out\\p3\\AndroidGLM\\opencvpnp\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "debug|arm64-v8a"
+  },
+  {
+    "level": "ERROR",
+    "message": "Waiting for type \"handshake\".",
+    "file": "D:\\out\\p3\\AndroidGLM\\opencvpnp\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "debug|arm64-v8a"
+  },
+  {
+    "level": "INFO",
+    "message": "JSON generation completed with problem. Exception: com.android.ide.common.process.ProcessException: Error configuring CMake server (E:\\software\\android\\cmake\\3.10.2.4988404\\bin).\r\n",
+    "file": "D:\\out\\p3\\AndroidGLM\\opencvpnp\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "debug|arm64-v8a"
+  }
+]

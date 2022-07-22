@@ -1,0 +1,12 @@
+# ninja log v5
+42	1128	680186482	CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/common/myGLFunctions.cpp.o	f5ee99ba0b454df2
+121	1132	680186482	CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/common/misc.cpp.o	5a5eeed37dd51f4c
+29	1146	680186482	CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/common/myGLCamera.cpp.o	b4bf1cb37b3c4717
+55	1147	680186482	CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/common/myJNIHelper.cpp.o	74cf8aa5176e8f2b
+15	1203	680186482	CMakeFiles/native-lib.dir/src/main/cpp/jniCalls/cubeActivity.cpp.o	2d5ffaf595ecb5c
+1	1228	680186482	CMakeFiles/native-lib.dir/src/main/cpp/jniCalls/gestureClass.cpp.o	7854c7e820bb0a91
+73	1273	680186482	CMakeFiles/native-lib.dir/src/main/cpp/jniCalls/myGLRenderer.cpp.o	4562f4b0bbb32455
+165	1319	680186482	CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/cube/myCube.cpp.o	b47d19b04433a50e
+144	1332	680186482	CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/common/myShader.cpp.o	3a4dc486788f7252
+1332	2059	680186483	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so	b3ebf822a74a300f
+0	64	0	clean	4d7393c5bb2fde58

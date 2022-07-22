@@ -1,0 +1,1851 @@
+ninja: Entering directory `D:\out\p3\AndroidGLM\app\.cxx\cmake\debug\x86'
+[1/10] Building CXX object CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/common/myGLFunctions.cpp.o
+[2/10] Building CXX object CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/common/myShader.cpp.o
+../../../../src/main/cpp/nativeCode/common/myShader.cpp:194:1: warning: control may reach end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+[3/10] Building CXX object CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/common/misc.cpp.o
+FAILED: CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/common/misc.cpp.o 
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=i686-none-linux-android24 --gcc-toolchain=E:/software/android/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=E:/software/android/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -frtti -fexceptions -Wall -fno-exceptions -fno-rtti -O0 -fno-limit-debug-info  -fPIC -MD -MT CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/common/misc.cpp.o -MF CMakeFiles\native-lib.dir\src\main\cpp\nativeCode\common\misc.cpp.o.d -o CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/common/misc.cpp.o -c ../../../../src/main/cpp/nativeCode/common/misc.cpp
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.cpp:17:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:343:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_lowp>::vec(float _s)
+                                                                           ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:344:10: note: non-constexpr function '_mm_set1_ps' cannot be used in a constant expression
+                : data(_mm_set1_ps(_s))
+                       ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1814:1: note: declared here
+_mm_set1_ps(float __w)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.cpp:17:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:348:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_mediump>::vec(float _s)
+                                                                              ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:349:10: note: non-constexpr function '_mm_set1_ps' cannot be used in a constant expression
+                : data(_mm_set1_ps(_s))
+                       ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1814:1: note: declared here
+_mm_set1_ps(float __w)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.cpp:17:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:353:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_highp>::vec(float _s)
+                                                                            ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:354:10: note: non-constexpr function '_mm_set1_ps' cannot be used in a constant expression
+                : data(_mm_set1_ps(_s))
+                       ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1814:1: note: declared here
+_mm_set1_ps(float __w)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.cpp:17:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:375:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_lowp>::vec(int32 _s) :
+                                                                           ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:376:8: note: non-constexpr function '_mm_set1_epi32' cannot be used in a constant expression
+                data(_mm_set1_epi32(_s))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3804:1: note: declared here
+_mm_set1_epi32(int __i)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.cpp:17:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:380:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_mediump>::vec(int32 _s) :
+                                                                              ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:381:8: note: non-constexpr function '_mm_set1_epi32' cannot be used in a constant expression
+                data(_mm_set1_epi32(_s))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3804:1: note: declared here
+_mm_set1_epi32(int __i)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.cpp:17:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:385:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_highp>::vec(int32 _s) :
+                                                                            ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:386:8: note: non-constexpr function '_mm_set1_epi32' cannot be used in a constant expression
+                data(_mm_set1_epi32(_s))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3804:1: note: declared here
+_mm_set1_epi32(int __i)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.cpp:17:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:407:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_lowp>::vec(float _x, float _y, float _z, float _w) :
+                                                                           ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:408:8: note: non-constexpr function '_mm_set_ps' cannot be used in a constant expression
+                data(_mm_set_ps(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1860:1: note: declared here
+_mm_set_ps(float __z, float __y, float __x, float __w)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.cpp:17:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:412:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_mediump>::vec(float _x, float _y, float _z, float _w) :
+                                                                              ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:413:8: note: non-constexpr function '_mm_set_ps' cannot be used in a constant expression
+                data(_mm_set_ps(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1860:1: note: declared here
+_mm_set_ps(float __z, float __y, float __x, float __w)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.cpp:17:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:417:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_highp>::vec(float _x, float _y, float _z, float _w) :
+                                                                            ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:418:8: note: non-constexpr function '_mm_set_ps' cannot be used in a constant expression
+                data(_mm_set_ps(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1860:1: note: declared here
+_mm_set_ps(float __z, float __y, float __x, float __w)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.cpp:17:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:423:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_lowp>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                           ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:424:8: note: non-constexpr function '_mm_set_epi32' cannot be used in a constant expression
+                data(_mm_set_epi32(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3659:1: note: declared here
+_mm_set_epi32(int __i3, int __i2, int __i1, int __i0)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.cpp:17:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:429:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_mediump>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                              ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:430:8: note: non-constexpr function '_mm_set_epi32' cannot be used in a constant expression
+                data(_mm_set_epi32(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3659:1: note: declared here
+_mm_set_epi32(int __i3, int __i2, int __i1, int __i0)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.cpp:17:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:435:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_highp>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                            ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:436:8: note: non-constexpr function '_mm_set_epi32' cannot be used in a constant expression
+                data(_mm_set_epi32(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3659:1: note: declared here
+_mm_set_epi32(int __i3, int __i2, int __i1, int __i0)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.cpp:17:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:441:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_lowp>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                           ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:442:8: note: non-constexpr function '_mm_castsi128_ps' cannot be used in a constant expression
+                data(_mm_castsi128_ps(_mm_set_epi32(_w, _z, _y, _x)))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:4930:1: note: declared here
+_mm_castsi128_ps(__m128i __a)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.cpp:17:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:447:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_mediump>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                              ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:448:8: note: non-constexpr function '_mm_castsi128_ps' cannot be used in a constant expression
+                data(_mm_castsi128_ps(_mm_set_epi32(_w, _z, _y, _x)))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:4930:1: note: declared here
+_mm_castsi128_ps(__m128i __a)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.cpp:17:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:453:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_highp>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                            ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:454:8: note: non-constexpr function '_mm_castsi128_ps' cannot be used in a constant expression
+                data(_mm_castsi128_ps(_mm_set_epi32(_w, _z, _y, _x)))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:4930:1: note: declared here
+_mm_castsi128_ps(__m128i __a)
+^
+15 errors generated.
+[4/10] Building CXX object CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/common/myJNIHelper.cpp.o
+FAILED: CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/common/myJNIHelper.cpp.o 
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=i686-none-linux-android24 --gcc-toolchain=E:/software/android/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=E:/software/android/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -frtti -fexceptions -Wall -fno-exceptions -fno-rtti -O0 -fno-limit-debug-info  -fPIC -MD -MT CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/common/myJNIHelper.cpp.o -MF CMakeFiles\native-lib.dir\src\main\cpp\nativeCode\common\myJNIHelper.cpp.o.d -o CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/common/myJNIHelper.cpp.o -c ../../../../src/main/cpp/nativeCode/common/myJNIHelper.cpp
+In file included from ../../../../src/main/cpp/nativeCode/common/myJNIHelper.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:343:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_lowp>::vec(float _s)
+                                                                           ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:344:10: note: non-constexpr function '_mm_set1_ps' cannot be used in a constant expression
+                : data(_mm_set1_ps(_s))
+                       ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1814:1: note: declared here
+_mm_set1_ps(float __w)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/myJNIHelper.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:348:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_mediump>::vec(float _s)
+                                                                              ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:349:10: note: non-constexpr function '_mm_set1_ps' cannot be used in a constant expression
+                : data(_mm_set1_ps(_s))
+                       ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1814:1: note: declared here
+_mm_set1_ps(float __w)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/myJNIHelper.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:353:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_highp>::vec(float _s)
+                                                                            ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:354:10: note: non-constexpr function '_mm_set1_ps' cannot be used in a constant expression
+                : data(_mm_set1_ps(_s))
+                       ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1814:1: note: declared here
+_mm_set1_ps(float __w)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/myJNIHelper.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:375:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_lowp>::vec(int32 _s) :
+                                                                           ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:376:8: note: non-constexpr function '_mm_set1_epi32' cannot be used in a constant expression
+                data(_mm_set1_epi32(_s))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3804:1: note: declared here
+_mm_set1_epi32(int __i)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/myJNIHelper.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:380:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_mediump>::vec(int32 _s) :
+                                                                              ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:381:8: note: non-constexpr function '_mm_set1_epi32' cannot be used in a constant expression
+                data(_mm_set1_epi32(_s))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3804:1: note: declared here
+_mm_set1_epi32(int __i)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/myJNIHelper.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:385:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_highp>::vec(int32 _s) :
+                                                                            ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:386:8: note: non-constexpr function '_mm_set1_epi32' cannot be used in a constant expression
+                data(_mm_set1_epi32(_s))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3804:1: note: declared here
+_mm_set1_epi32(int __i)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/myJNIHelper.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:407:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_lowp>::vec(float _x, float _y, float _z, float _w) :
+                                                                           ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:408:8: note: non-constexpr function '_mm_set_ps' cannot be used in a constant expression
+                data(_mm_set_ps(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1860:1: note: declared here
+_mm_set_ps(float __z, float __y, float __x, float __w)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/myJNIHelper.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:412:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_mediump>::vec(float _x, float _y, float _z, float _w) :
+                                                                              ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:413:8: note: non-constexpr function '_mm_set_ps' cannot be used in a constant expression
+                data(_mm_set_ps(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1860:1: note: declared here
+_mm_set_ps(float __z, float __y, float __x, float __w)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/myJNIHelper.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:417:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_highp>::vec(float _x, float _y, float _z, float _w) :
+                                                                            ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:418:8: note: non-constexpr function '_mm_set_ps' cannot be used in a constant expression
+                data(_mm_set_ps(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1860:1: note: declared here
+_mm_set_ps(float __z, float __y, float __x, float __w)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/myJNIHelper.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:423:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_lowp>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                           ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:424:8: note: non-constexpr function '_mm_set_epi32' cannot be used in a constant expression
+                data(_mm_set_epi32(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3659:1: note: declared here
+_mm_set_epi32(int __i3, int __i2, int __i1, int __i0)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/myJNIHelper.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:429:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_mediump>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                              ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:430:8: note: non-constexpr function '_mm_set_epi32' cannot be used in a constant expression
+                data(_mm_set_epi32(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3659:1: note: declared here
+_mm_set_epi32(int __i3, int __i2, int __i1, int __i0)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/myJNIHelper.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:435:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_highp>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                            ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:436:8: note: non-constexpr function '_mm_set_epi32' cannot be used in a constant expression
+                data(_mm_set_epi32(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3659:1: note: declared here
+_mm_set_epi32(int __i3, int __i2, int __i1, int __i0)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/myJNIHelper.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:441:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_lowp>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                           ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:442:8: note: non-constexpr function '_mm_castsi128_ps' cannot be used in a constant expression
+                data(_mm_castsi128_ps(_mm_set_epi32(_w, _z, _y, _x)))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:4930:1: note: declared here
+_mm_castsi128_ps(__m128i __a)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/myJNIHelper.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:447:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_mediump>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                              ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:448:8: note: non-constexpr function '_mm_castsi128_ps' cannot be used in a constant expression
+                data(_mm_castsi128_ps(_mm_set_epi32(_w, _z, _y, _x)))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:4930:1: note: declared here
+_mm_castsi128_ps(__m128i __a)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/myJNIHelper.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:453:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_highp>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                            ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:454:8: note: non-constexpr function '_mm_castsi128_ps' cannot be used in a constant expression
+                data(_mm_castsi128_ps(_mm_set_epi32(_w, _z, _y, _x)))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:4930:1: note: declared here
+_mm_castsi128_ps(__m128i __a)
+^
+15 errors generated.
+[5/10] Building CXX object CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/common/myGLCamera.cpp.o
+FAILED: CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/common/myGLCamera.cpp.o 
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=i686-none-linux-android24 --gcc-toolchain=E:/software/android/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=E:/software/android/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -frtti -fexceptions -Wall -fno-exceptions -fno-rtti -O0 -fno-limit-debug-info  -fPIC -MD -MT CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/common/myGLCamera.cpp.o -MF CMakeFiles\native-lib.dir\src\main\cpp\nativeCode\common\myGLCamera.cpp.o.d -o CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/common/myGLCamera.cpp.o -c ../../../../src/main/cpp/nativeCode/common/myGLCamera.cpp
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:343:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_lowp>::vec(float _s)
+                                                                           ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:344:10: note: non-constexpr function '_mm_set1_ps' cannot be used in a constant expression
+                : data(_mm_set1_ps(_s))
+                       ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1814:1: note: declared here
+_mm_set1_ps(float __w)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:348:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_mediump>::vec(float _s)
+                                                                              ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:349:10: note: non-constexpr function '_mm_set1_ps' cannot be used in a constant expression
+                : data(_mm_set1_ps(_s))
+                       ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1814:1: note: declared here
+_mm_set1_ps(float __w)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:353:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_highp>::vec(float _s)
+                                                                            ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:354:10: note: non-constexpr function '_mm_set1_ps' cannot be used in a constant expression
+                : data(_mm_set1_ps(_s))
+                       ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1814:1: note: declared here
+_mm_set1_ps(float __w)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:375:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_lowp>::vec(int32 _s) :
+                                                                           ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:376:8: note: non-constexpr function '_mm_set1_epi32' cannot be used in a constant expression
+                data(_mm_set1_epi32(_s))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3804:1: note: declared here
+_mm_set1_epi32(int __i)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:380:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_mediump>::vec(int32 _s) :
+                                                                              ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:381:8: note: non-constexpr function '_mm_set1_epi32' cannot be used in a constant expression
+                data(_mm_set1_epi32(_s))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3804:1: note: declared here
+_mm_set1_epi32(int __i)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:385:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_highp>::vec(int32 _s) :
+                                                                            ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:386:8: note: non-constexpr function '_mm_set1_epi32' cannot be used in a constant expression
+                data(_mm_set1_epi32(_s))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3804:1: note: declared here
+_mm_set1_epi32(int __i)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:407:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_lowp>::vec(float _x, float _y, float _z, float _w) :
+                                                                           ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:408:8: note: non-constexpr function '_mm_set_ps' cannot be used in a constant expression
+                data(_mm_set_ps(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1860:1: note: declared here
+_mm_set_ps(float __z, float __y, float __x, float __w)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:412:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_mediump>::vec(float _x, float _y, float _z, float _w) :
+                                                                              ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:413:8: note: non-constexpr function '_mm_set_ps' cannot be used in a constant expression
+                data(_mm_set_ps(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1860:1: note: declared here
+_mm_set_ps(float __z, float __y, float __x, float __w)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:417:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_highp>::vec(float _x, float _y, float _z, float _w) :
+                                                                            ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:418:8: note: non-constexpr function '_mm_set_ps' cannot be used in a constant expression
+                data(_mm_set_ps(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1860:1: note: declared here
+_mm_set_ps(float __z, float __y, float __x, float __w)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:423:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_lowp>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                           ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:424:8: note: non-constexpr function '_mm_set_epi32' cannot be used in a constant expression
+                data(_mm_set_epi32(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3659:1: note: declared here
+_mm_set_epi32(int __i3, int __i2, int __i1, int __i0)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:429:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_mediump>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                              ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:430:8: note: non-constexpr function '_mm_set_epi32' cannot be used in a constant expression
+                data(_mm_set_epi32(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3659:1: note: declared here
+_mm_set_epi32(int __i3, int __i2, int __i1, int __i0)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:435:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_highp>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                            ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:436:8: note: non-constexpr function '_mm_set_epi32' cannot be used in a constant expression
+                data(_mm_set_epi32(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3659:1: note: declared here
+_mm_set_epi32(int __i3, int __i2, int __i1, int __i0)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:441:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_lowp>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                           ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:442:8: note: non-constexpr function '_mm_castsi128_ps' cannot be used in a constant expression
+                data(_mm_castsi128_ps(_mm_set_epi32(_w, _z, _y, _x)))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:4930:1: note: declared here
+_mm_castsi128_ps(__m128i __a)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:447:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_mediump>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                              ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:448:8: note: non-constexpr function '_mm_castsi128_ps' cannot be used in a constant expression
+                data(_mm_castsi128_ps(_mm_set_epi32(_w, _z, _y, _x)))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:4930:1: note: declared here
+_mm_castsi128_ps(__m128i __a)
+^
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:453:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_highp>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                            ^
+../../../../src/main/cpp/nativeCode/common/../../../../../glm/detail/type_vec4_simd.inl:454:8: note: non-constexpr function '_mm_castsi128_ps' cannot be used in a constant expression
+                data(_mm_castsi128_ps(_mm_set_epi32(_w, _z, _y, _x)))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:4930:1: note: declared here
+_mm_castsi128_ps(__m128i __a)
+^
+15 errors generated.
+[6/10] Building CXX object CMakeFiles/native-lib.dir/src/main/cpp/jniCalls/cubeActivity.cpp.o
+FAILED: CMakeFiles/native-lib.dir/src/main/cpp/jniCalls/cubeActivity.cpp.o 
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=i686-none-linux-android24 --gcc-toolchain=E:/software/android/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=E:/software/android/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -frtti -fexceptions -Wall -fno-exceptions -fno-rtti -O0 -fno-limit-debug-info  -fPIC -MD -MT CMakeFiles/native-lib.dir/src/main/cpp/jniCalls/cubeActivity.cpp.o -MF CMakeFiles\native-lib.dir\src\main\cpp\jniCalls\cubeActivity.cpp.o.d -o CMakeFiles/native-lib.dir/src/main/cpp/jniCalls/cubeActivity.cpp.o -c ../../../../src/main/cpp/jniCalls/cubeActivity.cpp
+In file included from ../../../../src/main/cpp/jniCalls/cubeActivity.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:343:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_lowp>::vec(float _s)
+                                                                           ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:344:10: note: non-constexpr function '_mm_set1_ps' cannot be used in a constant expression
+                : data(_mm_set1_ps(_s))
+                       ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1814:1: note: declared here
+_mm_set1_ps(float __w)
+^
+In file included from ../../../../src/main/cpp/jniCalls/cubeActivity.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:348:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_mediump>::vec(float _s)
+                                                                              ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:349:10: note: non-constexpr function '_mm_set1_ps' cannot be used in a constant expression
+                : data(_mm_set1_ps(_s))
+                       ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1814:1: note: declared here
+_mm_set1_ps(float __w)
+^
+In file included from ../../../../src/main/cpp/jniCalls/cubeActivity.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:353:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_highp>::vec(float _s)
+                                                                            ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:354:10: note: non-constexpr function '_mm_set1_ps' cannot be used in a constant expression
+                : data(_mm_set1_ps(_s))
+                       ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1814:1: note: declared here
+_mm_set1_ps(float __w)
+^
+In file included from ../../../../src/main/cpp/jniCalls/cubeActivity.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:375:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_lowp>::vec(int32 _s) :
+                                                                           ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:376:8: note: non-constexpr function '_mm_set1_epi32' cannot be used in a constant expression
+                data(_mm_set1_epi32(_s))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3804:1: note: declared here
+_mm_set1_epi32(int __i)
+^
+In file included from ../../../../src/main/cpp/jniCalls/cubeActivity.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:380:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_mediump>::vec(int32 _s) :
+                                                                              ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:381:8: note: non-constexpr function '_mm_set1_epi32' cannot be used in a constant expression
+                data(_mm_set1_epi32(_s))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3804:1: note: declared here
+_mm_set1_epi32(int __i)
+^
+In file included from ../../../../src/main/cpp/jniCalls/cubeActivity.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:385:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_highp>::vec(int32 _s) :
+                                                                            ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:386:8: note: non-constexpr function '_mm_set1_epi32' cannot be used in a constant expression
+                data(_mm_set1_epi32(_s))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3804:1: note: declared here
+_mm_set1_epi32(int __i)
+^
+In file included from ../../../../src/main/cpp/jniCalls/cubeActivity.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:407:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_lowp>::vec(float _x, float _y, float _z, float _w) :
+                                                                           ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:408:8: note: non-constexpr function '_mm_set_ps' cannot be used in a constant expression
+                data(_mm_set_ps(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1860:1: note: declared here
+_mm_set_ps(float __z, float __y, float __x, float __w)
+^
+In file included from ../../../../src/main/cpp/jniCalls/cubeActivity.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:412:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_mediump>::vec(float _x, float _y, float _z, float _w) :
+                                                                              ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:413:8: note: non-constexpr function '_mm_set_ps' cannot be used in a constant expression
+                data(_mm_set_ps(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1860:1: note: declared here
+_mm_set_ps(float __z, float __y, float __x, float __w)
+^
+In file included from ../../../../src/main/cpp/jniCalls/cubeActivity.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:417:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_highp>::vec(float _x, float _y, float _z, float _w) :
+                                                                            ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:418:8: note: non-constexpr function '_mm_set_ps' cannot be used in a constant expression
+                data(_mm_set_ps(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1860:1: note: declared here
+_mm_set_ps(float __z, float __y, float __x, float __w)
+^
+In file included from ../../../../src/main/cpp/jniCalls/cubeActivity.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:423:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_lowp>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                           ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:424:8: note: non-constexpr function '_mm_set_epi32' cannot be used in a constant expression
+                data(_mm_set_epi32(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3659:1: note: declared here
+_mm_set_epi32(int __i3, int __i2, int __i1, int __i0)
+^
+In file included from ../../../../src/main/cpp/jniCalls/cubeActivity.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:429:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_mediump>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                              ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:430:8: note: non-constexpr function '_mm_set_epi32' cannot be used in a constant expression
+                data(_mm_set_epi32(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3659:1: note: declared here
+_mm_set_epi32(int __i3, int __i2, int __i1, int __i0)
+^
+In file included from ../../../../src/main/cpp/jniCalls/cubeActivity.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:435:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_highp>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                            ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:436:8: note: non-constexpr function '_mm_set_epi32' cannot be used in a constant expression
+                data(_mm_set_epi32(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3659:1: note: declared here
+_mm_set_epi32(int __i3, int __i2, int __i1, int __i0)
+^
+In file included from ../../../../src/main/cpp/jniCalls/cubeActivity.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:441:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_lowp>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                           ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:442:8: note: non-constexpr function '_mm_castsi128_ps' cannot be used in a constant expression
+                data(_mm_castsi128_ps(_mm_set_epi32(_w, _z, _y, _x)))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:4930:1: note: declared here
+_mm_castsi128_ps(__m128i __a)
+^
+In file included from ../../../../src/main/cpp/jniCalls/cubeActivity.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:447:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_mediump>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                              ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:448:8: note: non-constexpr function '_mm_castsi128_ps' cannot be used in a constant expression
+                data(_mm_castsi128_ps(_mm_set_epi32(_w, _z, _y, _x)))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:4930:1: note: declared here
+_mm_castsi128_ps(__m128i __a)
+^
+In file included from ../../../../src/main/cpp/jniCalls/cubeActivity.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:453:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_highp>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                            ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:454:8: note: non-constexpr function '_mm_castsi128_ps' cannot be used in a constant expression
+                data(_mm_castsi128_ps(_mm_set_epi32(_w, _z, _y, _x)))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:4930:1: note: declared here
+_mm_castsi128_ps(__m128i __a)
+^
+15 errors generated.
+[7/10] Building CXX object CMakeFiles/native-lib.dir/src/main/cpp/jniCalls/gestureClass.cpp.o
+FAILED: CMakeFiles/native-lib.dir/src/main/cpp/jniCalls/gestureClass.cpp.o 
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=i686-none-linux-android24 --gcc-toolchain=E:/software/android/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=E:/software/android/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -frtti -fexceptions -Wall -fno-exceptions -fno-rtti -O0 -fno-limit-debug-info  -fPIC -MD -MT CMakeFiles/native-lib.dir/src/main/cpp/jniCalls/gestureClass.cpp.o -MF CMakeFiles\native-lib.dir\src\main\cpp\jniCalls\gestureClass.cpp.o.d -o CMakeFiles/native-lib.dir/src/main/cpp/jniCalls/gestureClass.cpp.o -c ../../../../src/main/cpp/jniCalls/gestureClass.cpp
+In file included from ../../../../src/main/cpp/jniCalls/gestureClass.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:343:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_lowp>::vec(float _s)
+                                                                           ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:344:10: note: non-constexpr function '_mm_set1_ps' cannot be used in a constant expression
+                : data(_mm_set1_ps(_s))
+                       ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1814:1: note: declared here
+_mm_set1_ps(float __w)
+^
+In file included from ../../../../src/main/cpp/jniCalls/gestureClass.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:348:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_mediump>::vec(float _s)
+                                                                              ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:349:10: note: non-constexpr function '_mm_set1_ps' cannot be used in a constant expression
+                : data(_mm_set1_ps(_s))
+                       ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1814:1: note: declared here
+_mm_set1_ps(float __w)
+^
+In file included from ../../../../src/main/cpp/jniCalls/gestureClass.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:353:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_highp>::vec(float _s)
+                                                                            ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:354:10: note: non-constexpr function '_mm_set1_ps' cannot be used in a constant expression
+                : data(_mm_set1_ps(_s))
+                       ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1814:1: note: declared here
+_mm_set1_ps(float __w)
+^
+In file included from ../../../../src/main/cpp/jniCalls/gestureClass.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:375:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_lowp>::vec(int32 _s) :
+                                                                           ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:376:8: note: non-constexpr function '_mm_set1_epi32' cannot be used in a constant expression
+                data(_mm_set1_epi32(_s))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3804:1: note: declared here
+_mm_set1_epi32(int __i)
+^
+In file included from ../../../../src/main/cpp/jniCalls/gestureClass.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:380:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_mediump>::vec(int32 _s) :
+                                                                              ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:381:8: note: non-constexpr function '_mm_set1_epi32' cannot be used in a constant expression
+                data(_mm_set1_epi32(_s))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3804:1: note: declared here
+_mm_set1_epi32(int __i)
+^
+In file included from ../../../../src/main/cpp/jniCalls/gestureClass.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:385:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_highp>::vec(int32 _s) :
+                                                                            ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:386:8: note: non-constexpr function '_mm_set1_epi32' cannot be used in a constant expression
+                data(_mm_set1_epi32(_s))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3804:1: note: declared here
+_mm_set1_epi32(int __i)
+^
+In file included from ../../../../src/main/cpp/jniCalls/gestureClass.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:407:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_lowp>::vec(float _x, float _y, float _z, float _w) :
+                                                                           ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:408:8: note: non-constexpr function '_mm_set_ps' cannot be used in a constant expression
+                data(_mm_set_ps(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1860:1: note: declared here
+_mm_set_ps(float __z, float __y, float __x, float __w)
+^
+In file included from ../../../../src/main/cpp/jniCalls/gestureClass.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:412:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_mediump>::vec(float _x, float _y, float _z, float _w) :
+                                                                              ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:413:8: note: non-constexpr function '_mm_set_ps' cannot be used in a constant expression
+                data(_mm_set_ps(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1860:1: note: declared here
+_mm_set_ps(float __z, float __y, float __x, float __w)
+^
+In file included from ../../../../src/main/cpp/jniCalls/gestureClass.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:417:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_highp>::vec(float _x, float _y, float _z, float _w) :
+                                                                            ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:418:8: note: non-constexpr function '_mm_set_ps' cannot be used in a constant expression
+                data(_mm_set_ps(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1860:1: note: declared here
+_mm_set_ps(float __z, float __y, float __x, float __w)
+^
+In file included from ../../../../src/main/cpp/jniCalls/gestureClass.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:423:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_lowp>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                           ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:424:8: note: non-constexpr function '_mm_set_epi32' cannot be used in a constant expression
+                data(_mm_set_epi32(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3659:1: note: declared here
+_mm_set_epi32(int __i3, int __i2, int __i1, int __i0)
+^
+In file included from ../../../../src/main/cpp/jniCalls/gestureClass.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:429:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_mediump>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                              ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:430:8: note: non-constexpr function '_mm_set_epi32' cannot be used in a constant expression
+                data(_mm_set_epi32(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3659:1: note: declared here
+_mm_set_epi32(int __i3, int __i2, int __i1, int __i0)
+^
+In file included from ../../../../src/main/cpp/jniCalls/gestureClass.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:435:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_highp>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                            ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:436:8: note: non-constexpr function '_mm_set_epi32' cannot be used in a constant expression
+                data(_mm_set_epi32(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3659:1: note: declared here
+_mm_set_epi32(int __i3, int __i2, int __i1, int __i0)
+^
+In file included from ../../../../src/main/cpp/jniCalls/gestureClass.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:441:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_lowp>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                           ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:442:8: note: non-constexpr function '_mm_castsi128_ps' cannot be used in a constant expression
+                data(_mm_castsi128_ps(_mm_set_epi32(_w, _z, _y, _x)))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:4930:1: note: declared here
+_mm_castsi128_ps(__m128i __a)
+^
+In file included from ../../../../src/main/cpp/jniCalls/gestureClass.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:447:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_mediump>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                              ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:448:8: note: non-constexpr function '_mm_castsi128_ps' cannot be used in a constant expression
+                data(_mm_castsi128_ps(_mm_set_epi32(_w, _z, _y, _x)))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:4930:1: note: declared here
+_mm_castsi128_ps(__m128i __a)
+^
+In file included from ../../../../src/main/cpp/jniCalls/gestureClass.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:453:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_highp>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                            ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:454:8: note: non-constexpr function '_mm_castsi128_ps' cannot be used in a constant expression
+                data(_mm_castsi128_ps(_mm_set_epi32(_w, _z, _y, _x)))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:4930:1: note: declared here
+_mm_castsi128_ps(__m128i __a)
+^
+15 errors generated.
+[8/10] Building CXX object CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/cube/myCube.cpp.o
+FAILED: CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/cube/myCube.cpp.o 
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=i686-none-linux-android24 --gcc-toolchain=E:/software/android/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=E:/software/android/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -frtti -fexceptions -Wall -fno-exceptions -fno-rtti -O0 -fno-limit-debug-info  -fPIC -MD -MT CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/cube/myCube.cpp.o -MF CMakeFiles\native-lib.dir\src\main\cpp\nativeCode\cube\myCube.cpp.o.d -o CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/cube/myCube.cpp.o -c ../../../../src/main/cpp/nativeCode/cube/myCube.cpp
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:343:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_lowp>::vec(float _s)
+                                                                           ^
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:344:10: note: non-constexpr function '_mm_set1_ps' cannot be used in a constant expression
+                : data(_mm_set1_ps(_s))
+                       ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1814:1: note: declared here
+_mm_set1_ps(float __w)
+^
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:348:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_mediump>::vec(float _s)
+                                                                              ^
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:349:10: note: non-constexpr function '_mm_set1_ps' cannot be used in a constant expression
+                : data(_mm_set1_ps(_s))
+                       ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1814:1: note: declared here
+_mm_set1_ps(float __w)
+^
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:353:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_highp>::vec(float _s)
+                                                                            ^
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:354:10: note: non-constexpr function '_mm_set1_ps' cannot be used in a constant expression
+                : data(_mm_set1_ps(_s))
+                       ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1814:1: note: declared here
+_mm_set1_ps(float __w)
+^
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:375:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_lowp>::vec(int32 _s) :
+                                                                           ^
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:376:8: note: non-constexpr function '_mm_set1_epi32' cannot be used in a constant expression
+                data(_mm_set1_epi32(_s))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3804:1: note: declared here
+_mm_set1_epi32(int __i)
+^
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:380:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_mediump>::vec(int32 _s) :
+                                                                              ^
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:381:8: note: non-constexpr function '_mm_set1_epi32' cannot be used in a constant expression
+                data(_mm_set1_epi32(_s))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3804:1: note: declared here
+_mm_set1_epi32(int __i)
+^
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:385:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_highp>::vec(int32 _s) :
+                                                                            ^
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:386:8: note: non-constexpr function '_mm_set1_epi32' cannot be used in a constant expression
+                data(_mm_set1_epi32(_s))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3804:1: note: declared here
+_mm_set1_epi32(int __i)
+^
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:407:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_lowp>::vec(float _x, float _y, float _z, float _w) :
+                                                                           ^
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:408:8: note: non-constexpr function '_mm_set_ps' cannot be used in a constant expression
+                data(_mm_set_ps(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1860:1: note: declared here
+_mm_set_ps(float __z, float __y, float __x, float __w)
+^
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:412:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_mediump>::vec(float _x, float _y, float _z, float _w) :
+                                                                              ^
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:413:8: note: non-constexpr function '_mm_set_ps' cannot be used in a constant expression
+                data(_mm_set_ps(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1860:1: note: declared here
+_mm_set_ps(float __z, float __y, float __x, float __w)
+^
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:417:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_highp>::vec(float _x, float _y, float _z, float _w) :
+                                                                            ^
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:418:8: note: non-constexpr function '_mm_set_ps' cannot be used in a constant expression
+                data(_mm_set_ps(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1860:1: note: declared here
+_mm_set_ps(float __z, float __y, float __x, float __w)
+^
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:423:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_lowp>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                           ^
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:424:8: note: non-constexpr function '_mm_set_epi32' cannot be used in a constant expression
+                data(_mm_set_epi32(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3659:1: note: declared here
+_mm_set_epi32(int __i3, int __i2, int __i1, int __i0)
+^
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:429:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_mediump>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                              ^
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:430:8: note: non-constexpr function '_mm_set_epi32' cannot be used in a constant expression
+                data(_mm_set_epi32(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3659:1: note: declared here
+_mm_set_epi32(int __i3, int __i2, int __i1, int __i0)
+^
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:435:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_highp>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                            ^
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:436:8: note: non-constexpr function '_mm_set_epi32' cannot be used in a constant expression
+                data(_mm_set_epi32(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3659:1: note: declared here
+_mm_set_epi32(int __i3, int __i2, int __i1, int __i0)
+^
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:441:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_lowp>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                           ^
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:442:8: note: non-constexpr function '_mm_castsi128_ps' cannot be used in a constant expression
+                data(_mm_castsi128_ps(_mm_set_epi32(_w, _z, _y, _x)))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:4930:1: note: declared here
+_mm_castsi128_ps(__m128i __a)
+^
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:447:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_mediump>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                              ^
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:448:8: note: non-constexpr function '_mm_castsi128_ps' cannot be used in a constant expression
+                data(_mm_castsi128_ps(_mm_set_epi32(_w, _z, _y, _x)))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:4930:1: note: declared here
+_mm_castsi128_ps(__m128i __a)
+^
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.cpp:18:
+In file included from ../../../../src/main/cpp/nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:453:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_highp>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                            ^
+../../../../src/main/cpp/nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:454:8: note: non-constexpr function '_mm_castsi128_ps' cannot be used in a constant expression
+                data(_mm_castsi128_ps(_mm_set_epi32(_w, _z, _y, _x)))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:4930:1: note: declared here
+_mm_castsi128_ps(__m128i __a)
+^
+15 errors generated.
+[9/10] Building CXX object CMakeFiles/native-lib.dir/src/main/cpp/jniCalls/myGLRenderer.cpp.o
+FAILED: CMakeFiles/native-lib.dir/src/main/cpp/jniCalls/myGLRenderer.cpp.o 
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=i686-none-linux-android24 --gcc-toolchain=E:/software/android/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=E:/software/android/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -frtti -fexceptions -Wall -fno-exceptions -fno-rtti -O0 -fno-limit-debug-info  -fPIC -MD -MT CMakeFiles/native-lib.dir/src/main/cpp/jniCalls/myGLRenderer.cpp.o -MF CMakeFiles\native-lib.dir\src\main\cpp\jniCalls\myGLRenderer.cpp.o.d -o CMakeFiles/native-lib.dir/src/main/cpp/jniCalls/myGLRenderer.cpp.o -c ../../../../src/main/cpp/jniCalls/myGLRenderer.cpp
+In file included from ../../../../src/main/cpp/jniCalls/myGLRenderer.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:343:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_lowp>::vec(float _s)
+                                                                           ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:344:10: note: non-constexpr function '_mm_set1_ps' cannot be used in a constant expression
+                : data(_mm_set1_ps(_s))
+                       ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1814:1: note: declared here
+_mm_set1_ps(float __w)
+^
+In file included from ../../../../src/main/cpp/jniCalls/myGLRenderer.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:348:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_mediump>::vec(float _s)
+                                                                              ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:349:10: note: non-constexpr function '_mm_set1_ps' cannot be used in a constant expression
+                : data(_mm_set1_ps(_s))
+                       ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1814:1: note: declared here
+_mm_set1_ps(float __w)
+^
+In file included from ../../../../src/main/cpp/jniCalls/myGLRenderer.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:353:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_highp>::vec(float _s)
+                                                                            ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:354:10: note: non-constexpr function '_mm_set1_ps' cannot be used in a constant expression
+                : data(_mm_set1_ps(_s))
+                       ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1814:1: note: declared here
+_mm_set1_ps(float __w)
+^
+In file included from ../../../../src/main/cpp/jniCalls/myGLRenderer.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:375:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_lowp>::vec(int32 _s) :
+                                                                           ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:376:8: note: non-constexpr function '_mm_set1_epi32' cannot be used in a constant expression
+                data(_mm_set1_epi32(_s))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3804:1: note: declared here
+_mm_set1_epi32(int __i)
+^
+In file included from ../../../../src/main/cpp/jniCalls/myGLRenderer.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:380:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_mediump>::vec(int32 _s) :
+                                                                              ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:381:8: note: non-constexpr function '_mm_set1_epi32' cannot be used in a constant expression
+                data(_mm_set1_epi32(_s))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3804:1: note: declared here
+_mm_set1_epi32(int __i)
+^
+In file included from ../../../../src/main/cpp/jniCalls/myGLRenderer.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:385:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_highp>::vec(int32 _s) :
+                                                                            ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:386:8: note: non-constexpr function '_mm_set1_epi32' cannot be used in a constant expression
+                data(_mm_set1_epi32(_s))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3804:1: note: declared here
+_mm_set1_epi32(int __i)
+^
+In file included from ../../../../src/main/cpp/jniCalls/myGLRenderer.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:407:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_lowp>::vec(float _x, float _y, float _z, float _w) :
+                                                                           ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:408:8: note: non-constexpr function '_mm_set_ps' cannot be used in a constant expression
+                data(_mm_set_ps(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1860:1: note: declared here
+_mm_set_ps(float __z, float __y, float __x, float __w)
+^
+In file included from ../../../../src/main/cpp/jniCalls/myGLRenderer.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:412:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_mediump>::vec(float _x, float _y, float _z, float _w) :
+                                                                              ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:413:8: note: non-constexpr function '_mm_set_ps' cannot be used in a constant expression
+                data(_mm_set_ps(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1860:1: note: declared here
+_mm_set_ps(float __z, float __y, float __x, float __w)
+^
+In file included from ../../../../src/main/cpp/jniCalls/myGLRenderer.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:417:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_highp>::vec(float _x, float _y, float _z, float _w) :
+                                                                            ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:418:8: note: non-constexpr function '_mm_set_ps' cannot be used in a constant expression
+                data(_mm_set_ps(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\xmmintrin.h:1860:1: note: declared here
+_mm_set_ps(float __z, float __y, float __x, float __w)
+^
+In file included from ../../../../src/main/cpp/jniCalls/myGLRenderer.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:423:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_lowp>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                           ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:424:8: note: non-constexpr function '_mm_set_epi32' cannot be used in a constant expression
+                data(_mm_set_epi32(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3659:1: note: declared here
+_mm_set_epi32(int __i3, int __i2, int __i1, int __i0)
+^
+In file included from ../../../../src/main/cpp/jniCalls/myGLRenderer.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:429:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_mediump>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                              ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:430:8: note: non-constexpr function '_mm_set_epi32' cannot be used in a constant expression
+                data(_mm_set_epi32(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3659:1: note: declared here
+_mm_set_epi32(int __i3, int __i2, int __i1, int __i0)
+^
+In file included from ../../../../src/main/cpp/jniCalls/myGLRenderer.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:435:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, int32, aligned_highp>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                            ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:436:8: note: non-constexpr function '_mm_set_epi32' cannot be used in a constant expression
+                data(_mm_set_epi32(_w, _z, _y, _x))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:3659:1: note: declared here
+_mm_set_epi32(int __i3, int __i2, int __i1, int __i0)
+^
+In file included from ../../../../src/main/cpp/jniCalls/myGLRenderer.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:441:69: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_lowp>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                           ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:442:8: note: non-constexpr function '_mm_castsi128_ps' cannot be used in a constant expression
+                data(_mm_castsi128_ps(_mm_set_epi32(_w, _z, _y, _x)))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:4930:1: note: declared here
+_mm_castsi128_ps(__m128i __a)
+^
+In file included from ../../../../src/main/cpp/jniCalls/myGLRenderer.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:447:72: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_mediump>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                              ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:448:8: note: non-constexpr function '_mm_castsi128_ps' cannot be used in a constant expression
+                data(_mm_castsi128_ps(_mm_set_epi32(_w, _z, _y, _x)))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:4930:1: note: declared here
+_mm_castsi128_ps(__m128i __a)
+^
+In file included from ../../../../src/main/cpp/jniCalls/myGLRenderer.cpp:18:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/myCube.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLCamera.h:22:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/misc.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/myGLM.h:23:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/glm.hpp:72:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/vec4.hpp:8:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.hpp:452:
+In file included from ../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4.inl:961:
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:453:70: error: constexpr constructor never produces a constant expression [-Winvalid-constexpr]
+        GLM_FUNC_QUALIFIER GLM_CONSTEXPR_CTOR vec<4, float, aligned_highp>::vec(int32 _x, int32 _y, int32 _z, int32 _w) :
+                                                                            ^
+../../../../src/main/cpp/jniCalls/../nativeCode/cube/../common/../../../../../glm/detail/type_vec4_simd.inl:454:8: note: non-constexpr function '_mm_castsi128_ps' cannot be used in a constant expression
+                data(_mm_castsi128_ps(_mm_set_epi32(_w, _z, _y, _x)))
+                     ^
+E:\software\android\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\9.0.9\include\emmintrin.h:4930:1: note: declared here
+_mm_castsi128_ps(__m128i __a)
+^
+15 errors generated.
+ninja: build stopped: subcommand failed.

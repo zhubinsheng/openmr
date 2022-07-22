@@ -1,0 +1,3 @@
+ninja: Entering directory `D:\out\p3\AndroidGLM\opencvpnp\.cxx\cmake\debug\arm64-v8a'
+[1/2] Building CXX object CMakeFiles/native-lib.dir/native-lib.cpp.o
+[2/2] Linking CXX shared library D:\out\p3\AndroidGLM\opencvpnp\build\intermediates\cmake\debug\obj\arm64-v8a\libnative-lib.so

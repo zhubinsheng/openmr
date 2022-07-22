@@ -1,0 +1,69 @@
+CMAKE SERVER: 
+
+CMAKE SERVER: [== "CMake Server" ==[
+
+CMAKE SERVER: {"supportedProtocolVersions":[{"isExperimental":true,"major":1,"minor":1}],"type":"hello"}
+
+CMAKE SERVER: ]== "CMake Server" ==]
+
+CMAKE SERVER: Not a directory: D:\out\p3\AndroidGLM\opencvpnp\src\main\cpp
+CMAKE SERVER: [== "CMake Server" ==[
+
+CMAKE SERVER: {
+  "type": "handshake",
+  "cookie": "gradle-cmake-cookie",
+  "protocolVersion": {
+    "isExperimental": true,
+    "major": 1,
+    "minor": 1
+  },
+  "sourceDirectory": "D:/out/p3/AndroidGLM/opencvpnp/src/main/cpp",
+  "buildDirectory": "D:/out/p3/AndroidGLM/opencvpnp/.cxx/cmake/debug/arm64-v8a",
+  "generator": "Ninja"
+}
+
+CMAKE SERVER: ]== "CMake Server" ==]
+
+CMAKE SERVER: 
+
+CMAKE SERVER: [== "CMake Server" ==[
+
+CMAKE SERVER: {"cookie":"gradle-cmake-cookie","errorMessage":"Failed to activate protocol version: \"CMAKE_HOME_DIRECTORY\" is set but incompatible with configured source directory value.","inReplyTo":"handshake","type":"error"}
+
+CMAKE SERVER: ]== "CMake Server" ==]
+
+CMAKE SERVER: Failed to activate protocol version: "CMAKE_HOME_DIRECTORY" is set but incompatible with configured source directory value.
+CMAKE SERVER: [== "CMake Server" ==[
+
+CMAKE SERVER: {
+  "type": "configure",
+  "cacheArguments": [
+    "",
+    "-DCMAKE_CXX_FLAGS\u003d-std\u003dc++14",
+    "-DCMAKE_FIND_ROOT_PATH\u003dD:\\out\\p3\\AndroidGLM\\opencvpnp\\.cxx\\cmake\\debug\\prefab\\arm64-v8a\\prefab",
+    "-DCMAKE_BUILD_TYPE\u003dDebug",
+    "-DCMAKE_TOOLCHAIN_FILE\u003dE:\\software\\android\\ndk\\21.4.7075529\\build\\cmake\\android.toolchain.cmake",
+    "-DANDROID_ABI\u003darm64-v8a",
+    "-DANDROID_NDK\u003dE:\\software\\android\\ndk\\21.4.7075529",
+    "-DANDROID_PLATFORM\u003dandroid-26",
+    "-DCMAKE_ANDROID_ARCH_ABI\u003darm64-v8a",
+    "-DCMAKE_ANDROID_NDK\u003dE:\\software\\android\\ndk\\21.4.7075529",
+    "-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON",
+    "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dD:\\out\\p3\\AndroidGLM\\opencvpnp\\build\\intermediates\\cmake\\debug\\obj\\arm64-v8a",
+    "-DCMAKE_MAKE_PROGRAM\u003dE:\\software\\android\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
+    "-DCMAKE_SYSTEM_NAME\u003dAndroid",
+    "-DCMAKE_SYSTEM_VERSION\u003d26"
+  ]
+}
+
+CMAKE SERVER: ]== "CMake Server" ==]
+
+CMAKE SERVER: 
+
+CMAKE SERVER: [== "CMake Server" ==[
+
+CMAKE SERVER: {"cookie":"","errorMessage":"Waiting for type \"handshake\".","inReplyTo":"configure","type":"error"}
+
+CMAKE SERVER: ]== "CMake Server" ==]
+
+CMAKE SERVER: Waiting for type "handshake".

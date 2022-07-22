@@ -1,0 +1,15 @@
+ninja: Entering directory `D:\out\p3\AndroidGLM\app\.cxx\cmake\debug\arm64-v8a'
+[1/10] Building CXX object CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/common/myGLFunctions.cpp.o
+[2/10] Building CXX object CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/common/misc.cpp.o
+[3/10] Building CXX object CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/common/myGLCamera.cpp.o
+[4/10] Building CXX object CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/common/myJNIHelper.cpp.o
+[5/10] Building CXX object CMakeFiles/native-lib.dir/src/main/cpp/jniCalls/cubeActivity.cpp.o
+[6/10] Building CXX object CMakeFiles/native-lib.dir/src/main/cpp/jniCalls/gestureClass.cpp.o
+[7/10] Building CXX object CMakeFiles/native-lib.dir/src/main/cpp/jniCalls/myGLRenderer.cpp.o
+[8/10] Building CXX object CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/cube/myCube.cpp.o
+[9/10] Building CXX object CMakeFiles/native-lib.dir/src/main/cpp/nativeCode/common/myShader.cpp.o
+../../../../src/main/cpp/nativeCode/common/myShader.cpp:194:1: warning: control may reach end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+[10/10] Linking CXX shared library ..\..\..\..\build\intermediates\cmake\debug\obj\arm64-v8a\libnative-lib.so

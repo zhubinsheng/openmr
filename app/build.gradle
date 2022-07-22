@@ -11,7 +11,7 @@ android {
         versionName "1.0"
         externalNativeBuild {
             cmake {
-
+                cppFlags "-frtti -fexceptions -Wall -fno-exceptions -fno-rtti"
             }
         }
     }
