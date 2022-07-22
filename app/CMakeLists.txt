@@ -6,7 +6,11 @@
 cmake_minimum_required(VERSION 3.4.1)
 
 aux_source_directory (${CMAKE_SOURCE_DIR}/glm/ GLM)
-aux_source_directory (src/main/cpp SRC)
+aux_source_directory (src/main/cpp/jniCalls SRC)
+
+aux_source_directory (src/main/cpp/nativeCode/common common)
+aux_source_directory (src/main/cpp/nativeCode/cube cube)
+
 aux_source_directory (${GLM}/gtc GTC)
 aux_source_directory (${GLM}/gtx GTX)
 aux_source_directory (${GLM}/detail DETAIL)
@@ -16,6 +20,12 @@ aux_source_directory (${GLM}/detail DETAIL)
 # You can define multiple libraries, and CMake builds them for you.
 # Gradle automatically packages shared libraries with your APK.
 
+SET (ALL_SRCS
+        ${SRC}
+        ${common}
+        ${cube}
+        )
+
 add_library( # Sets the name of the library.
              native-lib
 
@@ -23,7 +33,7 @@ add_library( # Sets the name of the library.
              SHARED
 
              # Provides a relative path to your source file(s).
-             ${SRC})
+             ${ALL_SRCS})
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by
