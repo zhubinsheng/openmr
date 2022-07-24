@@ -1,14 +1,30 @@
 #include <opencv2/opencv.hpp>
 #include <vector>
+#include <jni.h>
+#include<android/log.h>
 
 using namespace std;
 using namespace cv;
 
-int main()
-{
+#define TAG "pnp-jni" // 这个是自定义的LOG的标识
+#define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG,TAG ,__VA_ARGS__) // 定义LOGD类型
+#define LOGI(...) __android_log_print(ANDROID_LOG_INFO,TAG ,__VA_ARGS__) // 定义LOGI类型
+#define LOGW(...) __android_log_print(ANDROID_LOG_WARN,TAG ,__VA_ARGS__) // 定义LOGW类型
+#define LOGE(...) __android_log_print(ANDROID_LOG_ERROR,TAG ,__VA_ARGS__) // 定义LOGE类型
+#define LOGF(...) __android_log_print(ANDROID_LOG_FATAL,TAG ,__VA_ARGS__) // 定义LOGF类型
+
+jlong getNativeObj(JNIEnv *env, jclass jcInfo, jobject jobj, const char string[], const char string1[]) {
+    jfieldID jfi = env->GetFieldID(jcInfo, string, string1);
+    jlong jl = env->GetLongField(jobj, jfi);
+    return jl;
+}
+
+extern "C"
+JNIEXPORT void JNICALL
+Java_org_opencv_pnp_PnpBridge_findObjects(JNIEnv *env, jobject thiz, jlong native_obj) {
 
     // Read input image
-    cv::Mat im = cv::imread("headPose.jpg");
+    cv::Mat im = cv::imread("/sdcard/aaaaa/headPose.jpg");
 
     // 2D image points. If you change the image, you need to change vector
     std::vector<cv::Point2d> image_points;
@@ -64,7 +80,6 @@ int main()
     cout <<  nose_end_point2D << endl;
 
     // Display image.
-    cv::imshow("Output", im);
-    cv::waitKey(0);
+    cv::imwrite("/sdcard/aaaaa/headPose-result.jpg", im);
 
 }

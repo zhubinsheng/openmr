@@ -44,6 +44,7 @@ import org.opencv.jni.JniBridge;
 import org.opencv.objdetect.CascadeClassifier;
 import org.opencv.core.MatOfDouble;
 import org.opencv.osgi.OpenCVNativeLoader;
+import org.opencv.pnp.PnpBridge;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -209,7 +210,7 @@ public class MainActivity extends CameraActivity implements
         Mat im = new Mat();
         Imgproc.cvtColor(mRgba, im, Imgproc.COLOR_RGBA2RGB);
 
-
+        new PnpBridge().buildTemplate(mRgba);
         return im;
     }
     @Override

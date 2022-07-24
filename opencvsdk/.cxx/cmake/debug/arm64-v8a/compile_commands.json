@@ -1,7 +1,0 @@
-[
-{
-  "directory": "D:/out/p3/AndroidGLM/opencvsdk/.cxx/cmake/debug/arm64-v8a",
-  "command": "E:\\software\\android\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android21 --gcc-toolchain=E:/software/android/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=E:/software/android/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot   -ID:/out/p3/AndroidGLM/opencvsdk/libcxx_helper/../native/jni/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -frtti -fexceptions -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\opencv_jni_shared.dir\\dummy.cpp.o -c D:\\out\\p3\\AndroidGLM\\opencvsdk\\libcxx_helper\\dummy.cpp",
-  "file": "D:\\out\\p3\\AndroidGLM\\opencvsdk\\libcxx_helper\\dummy.cpp"
-}
-]
