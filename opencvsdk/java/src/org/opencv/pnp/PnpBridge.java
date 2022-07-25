@@ -16,7 +16,8 @@ public class PnpBridge {
     }
 
     public void buildTemplate(Mat mRgba) {
-        findObjects(1);
+//        findObjects(1);
+        pnp();
     }
 
     public void shower(Mat mRgba) {
@@ -24,5 +25,7 @@ public class PnpBridge {
     }
 
     private native void findObjects(long nativeObj);
+
+    private native void pnp();
 
 }

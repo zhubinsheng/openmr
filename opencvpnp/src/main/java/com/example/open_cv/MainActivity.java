@@ -210,7 +210,7 @@ public class MainActivity extends CameraActivity implements
         Mat im = new Mat();
         Imgproc.cvtColor(mRgba, im, Imgproc.COLOR_RGBA2RGB);
 
-        new PnpBridge().buildTemplate(mRgba);
+//        new PnpBridge().buildTemplate(mRgba);
         return im;
     }
     @Override

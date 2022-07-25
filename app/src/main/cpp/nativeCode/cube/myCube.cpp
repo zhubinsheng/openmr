@@ -27,7 +27,14 @@ MyCube::MyCube() {
 
     // create MyGLCamera object and set default position for the object
     myGLCamera = new MyGLCamera();
-    float pos[]={0.,0.,0.,1,1,0.};
+    float pos[]={
+            -1.629,
+            0.099,
+            -1.744,
+            179,
+            -53,
+            176.
+    };
     std::copy(&pos[0], &pos[5], std::back_inserter(modelDefaultPosition));
     myGLCamera->SetModelPosition(modelDefaultPosition);
 }

@@ -16,7 +16,10 @@ message("========= ${CMAKE_ANDROID_ARCH_ABI} =========")
 # You can define multiple libraries, and CMake builds them for you.
 # Gradle automatically packages shared libraries with your APK.
 
-add_library(pnp SHARED dummy.cpp)
+# 查找source目录下的所有*.cpp,*.c源文件,并将文件列表保存到 DIR_LIB_SRCS 变量
+file(GLOB_RECURSE SRC_DIR_LIST "./*.cpp" "./*.h")
+
+add_library(pnp SHARED ${SRC_DIR_LIST})
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by

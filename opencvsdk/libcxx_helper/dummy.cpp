@@ -2,6 +2,7 @@
 #include <vector>
 #include <jni.h>
 #include<android/log.h>
+#include "PNPsolver.h"
 
 using namespace std;
 using namespace cv;
@@ -44,6 +45,13 @@ Java_org_opencv_pnp_PnpBridge_findObjects(JNIEnv *env, jobject thiz, jlong nativ
     model_points.push_back(cv::Point3d(-150.0f, -150.0f, -125.0f));      // Left Mouth corner
     model_points.push_back(cv::Point3d(150.0f, -150.0f, -125.0f));       // Right mouth corner
 
+    //f=8
+    //dx=0.01
+    //dy=0.01
+    //u0=320
+    //v0=240
+    //list1=[f/dx,0,u0,0,f/dy,v0,0,0,1]
+
     // Camera internals
     double focal_length = im.cols; // Approximate focal length.
     Point2d center = cv::Point2d(im.cols/2,im.rows/2);
@@ -82,4 +90,38 @@ Java_org_opencv_pnp_PnpBridge_findObjects(JNIEnv *env, jobject thiz, jlong nativ
     // Display image.
     cv::imwrite("/sdcard/aaaaa/headPose-result.jpg", im);
 
+}
+extern "C"
+JNIEXPORT void JNICALL
+Java_org_opencv_pnp_PnpBridge_pnp(JNIEnv *env, jobject thiz) {
+    cv::Mat im = cv::imread("/sdcard/aaaaa/headPose.jpg");
+
+    // Camera internals
+    double focal_length = im.cols; // Approximate focal length.
+    Point2d center = cv::Point2d(im.cols/2,im.rows/2);
+
+    //list1=[f/dx,0,u0,0,f/dy,v0,0,0,1]
+    PNPsolver pnPsolver;
+
+    pnPsolver.SetCameraMatrix(focal_length, focal_length, center.x, center.y);
+
+    pnPsolver.SetDistortionMatrix(0,0,0,0);
+
+    pnPsolver.Points2D.push_back( cv::Point2d(359, 391) );    // Nose tip
+    pnPsolver.Points2D.push_back( cv::Point2d(399, 561) );    // Chin
+    pnPsolver.Points2D.push_back( cv::Point2d(337, 297) );     // Left eye left corner
+    pnPsolver.Points2D.push_back( cv::Point2d(513, 301) );    // Right eye right corner
+    pnPsolver.Points2D.push_back( cv::Point2d(345, 465) );    // Left Mouth corner
+    pnPsolver.Points2D.push_back( cv::Point2d(453, 469) );    // Right mouth corner
+
+    pnPsolver.Points3D.push_back(cv::Point3d(0.0f, 0.0f, 0.0f));               // Nose tip
+    pnPsolver.Points3D.push_back(cv::Point3d(0.0f, -330.0f, -65.0f));          // Chin
+    pnPsolver.Points3D.push_back(cv::Point3d(-225.0f, 170.0f, -135.0f));       // Left eye left corner
+    pnPsolver.Points3D.push_back(cv::Point3d(225.0f, 170.0f, -135.0f));        // Right eye right corner
+    pnPsolver.Points3D.push_back(cv::Point3d(-150.0f, -150.0f, -125.0f));      // Left Mouth corner
+    pnPsolver.Points3D.push_back(cv::Point3d(150.0f, -150.0f, -125.0f));       // Right mouth corner
+
+    int result = pnPsolver.Solve(SOLVEPNP_ITERATIVE);
+
+    LOGE("result: %D",result);
 }
