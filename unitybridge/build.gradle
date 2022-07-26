@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.protobuf'
 }
 
 android {
@@ -7,12 +8,11 @@ android {
 
     defaultConfig {
         applicationId "com.bl.unitybridge"
-        minSdkVersion 21
+        minSdkVersion 26
         targetSdkVersion 32
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
 
     buildTypes {
@@ -25,11 +25,46 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java']
+            jniLibs.srcDirs = ['libs']
+            assets.srcDirs = ['assets']
+
+            proto {
+                //指定proto文件位置,你的proto文件放置在此文件夹中
+                srcDir 'src/main/proto'
+            }
+        }
+    }
 }
 
 dependencies {
 
-    implementation 'androidx.appcompat:appcompat:1.0.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
+    implementation 'com.google.protobuf:protobuf-java:3.10.0'
+//    implementation 'com.google.protobuf:protoc:3.5.1'
+    debugImplementation 'com.apkfuns.logutils:library:1.7.5'
+    releaseImplementation 'com.apkfuns.logutils:logutils-no-op:1.7.5'
+    implementation  "org.java-websocket:Java-WebSocket:1.5.3"
+}
+
+protobuf {
+    protoc {
+        artifact = 'com.google.protobuf:protoc:3.5.1' // 也可以配置本地编译器路径
+    }
+
+    generateProtoTasks {
+        all().each { task ->
+            task.builtins {
+                remove java
+            }
+            task.builtins {
+                java {}// 生产java源码
+            }
+        }
+    }
 }

@@ -1,6 +1,7 @@
-include ':app'
+//include ':app'
 include ':unitybridge'
 
-include ':opencvpnp'
-include ':opencvsdk'
+//include ':opencvpnp'
+//include ':opencvsdk'
 
+include ':unityhook'

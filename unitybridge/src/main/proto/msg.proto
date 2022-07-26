@@ -1,0 +1,65 @@
+//指定proto的版本为proto3，不写的话默认为proto2.
+syntax = "proto3";
+//包名
+package proto;
+//引入包
+//import "";
+//指定生成类所在的Java包名
+option java_package = "com.bl.unitybridge";
+//重命名，如果不写，默认为文件名的首字母大写转化生成，如本文件如果不写则是Person
+option java_outer_classname = "MsgProto";
+
+//TCP无保护消息边界的解决
+//针对这个问题，一般有3种解决方案：
+//(1)发送固定长度的消息
+//(2)把消息的尺寸与消息一块发送
+//(3)使用特殊标记来区分消息间隔
+
+message Msg {
+  enum MsgType {
+    ControlHandleCoordinate = 0;
+    CalibrationParams = 1;
+    PhonePosture = 2;
+    VideoStream = 3;
+  }
+  //● n=0:是传递手柄位置信息
+  //● n=1:是传递camera参数信息
+  //● n=2:是传递手机位姿信息
+  //● n=3:是传递视频流
+
+  MsgType type = 10;
+  ControlHandleCoordinate controlHandleCoordinate = 20;
+  CalibrationParams calibrationParams = 30;
+  PhonePosture phonePosture = 35;
+  bytes videoStream = 40;
+
+}
+
+message ControlHandleCoordinate {
+  float posX = 1;
+  float posY = 2;
+  float posZ = 3;
+
+  float pitchAngle = 4;
+  float yawAngle   = 5;
+  float rollAngle  = 6;
+}
+
+message CalibrationParams {
+  int32 imageSizeWidth = 1;
+  int32 imageSizeHeight = 2;
+  float FOV = 3;
+  float aspectRatio = 4;
+  float nearPlaneDistance = 5;
+  float farPlaneDistance = 6;
+}
+
+message PhonePosture {
+  float posX = 1;
+  float posY = 2;
+  float posZ = 3;
+
+  float pitchAngle = 4;
+  float yawAngle   = 5;
+  float rollAngle  = 6;
+}
