@@ -1,5 +1,7 @@
 package com.bl.unitybridge;
 
+import com.apkfuns.logutils.LogUtils;
+
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 
@@ -45,7 +47,7 @@ public class SimpleServer extends WebSocketServer {
 	}
 
 	@Override
-	public void onMessage( WebSocket conn, ByteBuffer message ) {
+	public void onMessage(WebSocket conn, ByteBuffer message ) {
 		System.out.println("received ByteBuffer from "	+ conn.getRemoteSocketAddress());
 		msgCallback.onMessage(conn, message);
 	}

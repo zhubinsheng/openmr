@@ -55,12 +55,22 @@ public class UnityHookObj {
         return jsonObject.toString();
     }
 
+    private float poseX = 0;
+    private float poseY = 0;
+    private float poseZ = 0;
+
+    public void setCalibrationParams(float poseX, float poseY, float poseZ) {
+        this.poseX = poseX;
+        this.poseY = poseY;
+        this.poseZ = poseZ;
+    }
+
     public String getCalibrationParams() {
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("poseX", 100);
-            jsonObject.put("poseY", 100);
-            jsonObject.put("poseZ", 100);
+            jsonObject.put("poseX", poseX);
+            jsonObject.put("poseY", poseY);
+            jsonObject.put("poseZ", poseZ);
             jsonObject.put("rotationX", 100);
             jsonObject.put("rotationY", 100);
             jsonObject.put("rotationZ", 100);

@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'com.google.protobuf'
 }
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 32
@@ -13,6 +14,9 @@ android {
         versionCode 1
         versionName "1.0"
 
+        ndk {
+            abiFilters 'armeabi-v7a'
+        }
     }
 
     buildTypes {
@@ -38,6 +42,22 @@ android {
             }
         }
     }
+
+    packagingOptions {
+        doNotStrip '*/armeabi-v7a/*.so'
+    }
+
+    bundle {
+        language {
+            enableSplit = false
+        }
+        density {
+            enableSplit = false
+        }
+        abi {
+            enableSplit = true
+        }
+    }
 }
 
 dependencies {
@@ -50,6 +70,13 @@ dependencies {
     debugImplementation 'com.apkfuns.logutils:library:1.7.5'
     releaseImplementation 'com.apkfuns.logutils:logutils-no-op:1.7.5'
     implementation  "org.java-websocket:Java-WebSocket:1.5.3"
+
+    implementation "androidx.core:core-ktx:1.8.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation project(path: ':unityhook')
+    implementation project(':unityLibrary')
+
 }
 
 protobuf {
@@ -67,4 +94,7 @@ protobuf {
             }
         }
     }
+}
+repositories {
+    mavenCentral()
 }

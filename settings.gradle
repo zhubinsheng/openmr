@@ -5,3 +5,5 @@ include ':unitybridge'
 //include ':opencvsdk'
 
 include ':unityhook'
+
+include ':unityLibrary'

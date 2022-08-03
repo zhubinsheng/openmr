@@ -1,21 +1,34 @@
 package com.bl.unitybridge;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
+import android.Manifest;
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.apkfuns.logutils.LogUtils;
+import com.bl.unityhook.GLTexture;
+import com.bl.unityhook.UnityHookObj;
+import com.bl.unityhook.rtsp.RtspServer;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
+import com.pedro.rtpstreamer.displayexample.DisplayService;
+import com.unity3d.player.UnityPlayerActivity;
 
 import org.java_websocket.WebSocket;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.math.BigInteger;
 import java.net.Inet6Address;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
@@ -27,17 +40,93 @@ import java.util.Enumeration;
 
 public class MainActivity extends AppCompatActivity {
 
+    private final int REQUEST_CODE_STREAM = 179; //random num
+    private final int REQUEST_CODE_RECORD = 180; //random num
+
     private SimpleServer server;
 
     private HandlerThread handlerThread;
     private Handler handler;
 
+    private String bytesToHex(byte[] bytes) {
+        String hex = new BigInteger(1, bytes).toString(16);
+        return hex;
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        DisplayService displayService = DisplayService.Companion.getINSTANCE();
+        if (displayService != null && !displayService.isStreaming() && !displayService.isRecording()) {
+            //stop service only if no streaming or recording
+            stopService(new Intent(this, DisplayService.class));
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (data != null && (requestCode == REQUEST_CODE_STREAM
+                || requestCode == REQUEST_CODE_RECORD && resultCode == Activity.RESULT_OK)) {
+            DisplayService displayService = DisplayService.Companion.getINSTANCE();
+            if (displayService != null) {
+                String endpoint = "rtsp://111.229.8.130:18554/mystream";
+                displayService.prepareStreamRtp(endpoint, resultCode, data);
+                displayService.startStreamRtp(endpoint);
+            }
+        } else {
+            Toast.makeText(this, "No permissions available", Toast.LENGTH_SHORT).show();
+
+        }
+    }
+
+    public void onClick() {
+        DisplayService displayService = DisplayService.Companion.getINSTANCE();
+        if (displayService != null) {
+                if (!displayService.isStreaming()) {
+                    startActivityForResult(displayService.sendIntent(), REQUEST_CODE_STREAM);
+                } else {
+                    displayService.stopStream();
+                }
+        }
+    }
 
     private TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        GLTexture.getInstance().setContext(getApplicationContext());
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                startActivity(new Intent(MainActivity.this, UnityPlayerActivity.class));
+            }
+        }, 1000);
+
+//        startActivity(new Intent(this, CameraDemoActivity.class));
+        /*
+
+        DisplayService displayService = DisplayService.Companion.getINSTANCE();
+        //No streaming/recording start service
+        if (displayService == null) {
+            startService(new Intent(this, DisplayService.class));
+        }
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                onClick();
+            }
+        }, 1000);
+
+        if(Build.VERSION.SDK_INT>=23) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.CAMERA,
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                            Manifest.permission.READ_EXTERNAL_STORAGE},1);
+        }
+
         textView = findViewById(R.id.ipStr);
 
         handlerThread = new HandlerThread("work-thread");
@@ -60,13 +149,31 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 try {
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            setMsgCallback();
+                        }
+                    }, 500);
                     startWebSocketServer();
-                    setMsgCallback();
                 }catch (Exception e){
                     e.printStackTrace();
                 }
             }
         }).start();
+
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+//                RtspServer.getInstance().startCameraRtspServer(MainActivity.this);
+//                RtspServer.getInstance().prepareStreamRtp();
+//                RtspServer.getInstance().startStreamRtp("rtsp://0.0.0.0:12389/live/99");
+            }
+        });
+
+
+
+         */
     }
 
     private void setMsgCallback() {
@@ -89,12 +196,18 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     MsgProto.Msg msgProto = MsgProto.Msg.parseFrom(message.array());
 
+
                     if (msgProto.getType().getNumber() == MsgProto.Msg.MsgType.CalibrationParams_VALUE){
                         LogUtils.d(msgProto.getCalibrationParams());
                     }
 
                     if (msgProto.getType().getNumber() == MsgProto.Msg.MsgType.PhonePosture_VALUE){
                         LogUtils.d(msgProto.getPhonePosture());
+                        UnityHookObj.getInstance().setCalibrationParams(
+                                msgProto.getPhonePosture().getPosX(),
+                                msgProto.getPhonePosture().getPosY(),
+                                msgProto.getPhonePosture().getPosZ());
+
                     }
                 } catch (InvalidProtocolBufferException e) {
                     e.printStackTrace();
