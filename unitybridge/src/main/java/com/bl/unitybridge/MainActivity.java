@@ -6,6 +6,7 @@ import androidx.core.app.ActivityCompat;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaCodec;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 import com.apkfuns.logutils.LogUtils;
 import com.bl.unityhook.GLTexture;
 import com.bl.unityhook.UnityHookObj;
+import com.bl.unityhook.render.record.VideoEncoder;
 import com.bl.unityhook.rtsp.RtspServer;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
@@ -97,15 +99,27 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         GLTexture.getInstance().setContext(getApplicationContext());
+        VideoEncoder.mDataCallback = new VideoEncoder.DataCallback() {
+            @Override
+            public void encodedData(ByteBuffer encodedData, MediaCodec.BufferInfo mBufferInfo) {
+                sendVideoStream(encodedData, mBufferInfo);
+            }
+
+            @Override
+            public void outputFormatData(byte[] sps, byte[] pps) {
+                readyOutputFormatData(sps, pps);
+            }
+        };
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 startActivity(new Intent(MainActivity.this, UnityPlayerActivity.class));
             }
-        }, 1000);
+        }, 3000);
 
-//        startActivity(new Intent(this, CameraDemoActivity.class));
-        /*
+/*
+        startActivity(new Intent(this, CameraDemoActivity.class));
 
         DisplayService displayService = DisplayService.Companion.getINSTANCE();
         //No streaming/recording start service
@@ -119,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
                 onClick();
             }
         }, 1000);
+*/
 
         if(Build.VERSION.SDK_INT>=23) {
             ActivityCompat.requestPermissions(this,
@@ -162,18 +177,17 @@ public class MainActivity extends AppCompatActivity {
             }
         }).start();
 
-        handler.post(new Runnable() {
+/*        handler.post(new Runnable() {
             @Override
             public void run() {
-//                RtspServer.getInstance().startCameraRtspServer(MainActivity.this);
-//                RtspServer.getInstance().prepareStreamRtp();
-//                RtspServer.getInstance().startStreamRtp("rtsp://0.0.0.0:12389/live/99");
+                RtspServer.getInstance().startCameraRtspServer(MainActivity.this);
+                RtspServer.getInstance().prepareStreamRtp();
+                RtspServer.getInstance().startStreamRtp("rtsp://0.0.0.0:12389/live/99");
             }
-        });
+        });*/
 
 
 
-         */
     }
 
     private void setMsgCallback() {
@@ -209,6 +223,11 @@ public class MainActivity extends AppCompatActivity {
                                 msgProto.getPhonePosture().getPosZ());
 
                     }
+
+                    if (msgProto.getType().getNumber() == MsgProto.Msg.MsgType.VideoOutputFormat_VALUE){
+                        sendOutputFormatData(mSps);
+                        sendOutputFormatData(mPps);
+                    }
                 } catch (InvalidProtocolBufferException e) {
                     e.printStackTrace();
                 }
@@ -229,6 +248,46 @@ public class MainActivity extends AppCompatActivity {
         Log.i("sendMsg", Arrays.toString(msg));
         server.broadcast(msg);
         return true;
+    }
+
+    private byte[] mSps;
+    private byte[] mPps;
+
+    public void readyOutputFormatData(byte[] sps, byte[] pps){
+        this.mSps = sps;
+        this.mPps = pps;
+    }
+
+    public void sendOutputFormatData(byte[] b) {
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                MsgProto.Msg msgProto = MsgProto.Msg
+                        .newBuilder()
+                        .setType(MsgProto.Msg.MsgType.VideoOutputFormat)
+                        .setVideoStream(ByteString.copyFrom(b))
+                        .build();
+                sendMsg(msgProto.toByteArray());
+            }
+        });
+    }
+
+    public void sendVideoStream(ByteBuffer encodedData, MediaCodec.BufferInfo mBufferInfo) {
+        encodedData.position(mBufferInfo.offset);
+        encodedData.limit(mBufferInfo.offset + mBufferInfo.size);
+        byte[] b = new byte[mBufferInfo.size];
+        encodedData.get(b);
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                MsgProto.Msg msgProto = MsgProto.Msg
+                        .newBuilder()
+                        .setType(MsgProto.Msg.MsgType.VideoStream)
+                        .setVideoStream(ByteString.copyFrom(b))
+                        .build();
+                sendMsg(msgProto.toByteArray());
+            }
+        });
     }
 
     public void sendControlHandleCoordinateButton(View view) {

@@ -81,9 +81,9 @@ public class RtspServer {
     }
 
     //rtsp://0.0.0.0:12389/live/99
-    public Surface startStreamRtp(String endpoint) {
+    public Surface startStreamRtp(String endpoint, int width, int height, int i) {
         if (!displayBase.isStreaming()) {
-            if (displayBase.prepareVideo() && displayBase.prepareAudio()) {
+            if (displayBase.prepareVideo(width, height, i) && displayBase.prepareAudio()) {
                 return displayBase.startStream(endpoint);
             }
         } else {

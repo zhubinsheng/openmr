@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="jMuxer - a simple javascript mp4 muxer for non-standard streaming communications protocol">
+    <meta name="keywords" content="h264 player, mp4 player, mse, mp4 muxing, jmuxer, aac player">
+    <title>JMuxer demo</title>
+</head>
+<body>
+<p><b>Prerequisite command:</b> `node h264.js`</p>
+<div id="container" style="margin: 0 auto; text-align: center;">
+    <video style="border: 1px solid #333; max-width: 500px;" controls autoplay id="player"></video>
+</div>
+<script>
+var jmuxer;
+window.onload = function() {
+
+    var protobuf = require("protobufjs");
+    var Msg;
+    var buffer;
+    protobuf.load("./msg.proto", function (err, root) {
+    if (err)
+        throw err;
+
+    // Obtain a message type
+    Msg = root.lookupType("Msg");
+
+    // Exemplary payload
+    var payload = { type: 4};
+
+    // Verify the payload if necessary (i.e. when possibly incomplete or invalid)
+    var errMsg = Msg.verify(payload);
+    if (errMsg)
+        throw Error(errMsg);
+
+    // Create a new message
+    var message = Msg.create(payload); // or use .fromObject if conversion is necessary
+
+    // Encode a message to an Uint8Array (browser) or Buffer (node)
+    buffer = Msg.encode(message).finish();
+    // ... do something with buffer
+
+    });
+
+
+
+
+    var socketURL = 'ws://localhost:8080';
+    jmuxer = new JMuxer({
+        node: 'player',
+        mode: 'video',
+        flushingTime: 1000,
+        fps: 30,
+        debug: true,
+        onError: function(data) {
+            if (/Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor)) {
+                jmuxer.reset();
+            }
+        }
+     });
+     var ws = new WebSocket("ws://192.168.3.120:12388");
+    //  var ws = new WebSocket(socketURL);
+     ws.binaryType = 'arraybuffer';
+     ws.addEventListener('message',function(event) {
+        var vDara = new Uint8Array(event.data)
+        // console.log(vDara)
+        // Decode an Uint8Array (browser) or Buffer (node) to a message
+        var message = Msg.decode(vDara);
+        console.log(message)
+        // ... do something with message
+        if(vDara.byteLength == 0){
+
+        }else{
+            jmuxer.feed({
+                video: message.videoStream
+            });
+        }
+        
+     });
+
+     ws.addEventListener('error', function(e) {
+        console.log('Socket Error');
+     });
+
+    // 接続が開いたときのイベント
+    ws.addEventListener('open', function (event) {
+        ws.send(buffer);
+    });
+ }
+ 
+</script>
+<script type="text/javascript" src="jmuxer.min.js"></script>
+</body>
+</html>

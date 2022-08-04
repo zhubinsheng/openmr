@@ -19,6 +19,7 @@ import com.bl.unityhook.render.util.EGLHelper;
 import com.bl.unityhook.render.util.GlesUtil;
 
 import com.bl.unityhook.rtsp.CustomRtspServerDisplay;
+import com.bl.unityhook.rtsp.RtspServer;
 import com.pedro.rtsp.utils.ConnectCheckerRtsp;
 
 import java.io.File;
@@ -194,20 +195,25 @@ public class RecordRenderDrawer extends BaseRenderDrawer implements Runnable{
                 }, 1935);
 
                 Surface surface = null;
-                if (!rtspServerCamera1.isStreaming()) {
-                    if (rtspServerCamera1.isRecording() || rtspServerCamera1.prepareVideo()) {
+                if (!rtspServerCamera1.isStreaming()) {//640, 480, 30, 1200 * 1024, 0, 320
+                    if (rtspServerCamera1.isRecording() || rtspServerCamera1.prepareVideo(width, height,
+                            30, 1200 * 1024, 0, 320)) {
                         surface = rtspServerCamera1.startStream("");
 
                         rtspServerCamera1.startServer();
                     }
                 }
 
+            RtspServer.getInstance().prepareStreamRtp();
+            surface = RtspServer.getInstance().startStreamRtp("rtsp://111.229.8.130:28554/live/99",
+                    width, height, 1200 * 1024);
+
             mEglHelper = new EGLHelper();
             mEglHelper.createGL(context);
             mVideoPath = "/data/data/com.bl.unitybridge/files/" + "glvideo.mp4";
             mVideoEncoder = new VideoEncoder(width, height, new File(mVideoPath));
-            mEglSurface = mEglHelper.createWindowSurface(surface);
-//            mEglSurface = mEglHelper.createWindowSurface(mVideoEncoder.getInputSurface());
+//            mEglSurface = mEglHelper.createWindowSurface(surface);
+            mEglSurface = mEglHelper.createWindowSurface(mVideoEncoder.getInputSurface());
             boolean error = mEglHelper.makeCurrent(mEglSurface);
             if (!error) {
                 Log.e(TAG, "prepareVideoEncoder: make current error");
@@ -244,9 +250,9 @@ public class RecordRenderDrawer extends BaseRenderDrawer implements Runnable{
     private void drawFrame(long timeStamp) {
         Log.d(TAG, "drawFrame: " + timeStamp );
         mEglHelper.makeCurrent(mEglSurface);
-//        mVideoEncoder.drainEncoder(false);
+        mVideoEncoder.drainEncoder(false);
         onDraw();
-        sendImage(800, 800);
+//        sendImage(800, 800);
 
 //        mEglHelper.setPresentationTime(mEglSurface, timeStamp);
         mEglHelper.swapBuffers(mEglSurface);

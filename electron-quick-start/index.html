@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSMpeg Stream Client</title>
+	<style type="text/css">
+		html, body {
+			background-color: #111;
+			text-align: center;
+		}
+	</style>
+	
+</head>
+<body>
+	<canvas id="video-canvas"></canvas>
+	<script type="text/javascript" src="jsmpeg.min.js"></script>
+	<script type="text/javascript">
+
+    var ws = new WebSocket("ws://192.168.3.105:12388");
+    ws.onopen = function(){
+        // ws.send("Message to send ");
+        // alert("Message is sent...");
+    };
+    ws.onmessage = function(evt){
+        var received_msg = evt.data;
+        // console.log("Message is received..." + received_msg);
+    };
+    ws.onclose = function(){
+        // alert("Connection is closed...");
+    };
+
+		var canvas = document.getElementById('video-canvas');
+		var url = 'ws://192.168.3.105:12388';
+		var player = new JSMpeg.Player(url, {canvas: canvas});
+	</script>
+</body>
+</html>

@@ -15,10 +15,19 @@ import java.nio.ByteBuffer;
  * Created By Chengjunsen on 2018/9/20
  */
 public class VideoEncoder {
+
+    public interface DataCallback{
+        void encodedData(ByteBuffer encodedData, MediaCodec.BufferInfo mBufferInfo);
+
+        void outputFormatData(byte[] sps, byte[] pps);
+    }
+
+    public static DataCallback mDataCallback;
+
     private static final String TAG = "VideoEncoder";
 
     private static final int FRAME_RATE = 30;
-    private static final int IFRAME_INTERVAL = 10;
+    private static final int IFRAME_INTERVAL = 1;
 
     private Surface mInputSurface;
     private MediaMuxer mMuxer;
@@ -38,6 +47,19 @@ public class VideoEncoder {
         format.setInteger(MediaFormat.KEY_FRAME_RATE, FRAME_RATE);
         format.setInteger(MediaFormat.KEY_I_FRAME_INTERVAL, IFRAME_INTERVAL);
         Log.d(TAG, "format: " + format);
+
+
+        //Profile越高，就说明采用了越高级的压缩特性。
+        //Level越高，视频的码率、分辨率、fps越高
+//		format.setInteger(MediaFormat.KEY_PROFILE, MediaCodecInfo.CodecProfileLevel.AVCProfileHigh);
+        format.setInteger(MediaFormat.KEY_LEVEL, MediaCodecInfo.CodecProfileLevel.AVCLevel52);
+        format.setInteger(MediaFormat.KEY_MAX_INPUT_SIZE, 0);
+
+        //BITRATE_MODE_CQ: 表示完全不控制码率，尽最大可能保证图像质量
+        //BITRATE_MODE_CBR: 表示编码器会尽量把输出码率控制为设定值
+        //BITRATE_MODE_VBR: 表示编码器会根据图像内容的复杂度（实际上是帧间变化量的大小）来动态调整输出码率，图像复杂则码率高，图像简单则码率低；
+        format.setInteger(MediaFormat.KEY_BITRATE_MODE, MediaCodecInfo.EncoderCapabilities.BITRATE_MODE_CBR);
+
 
         mEncoder = MediaCodec.createEncoderByType(MediaFormat.MIMETYPE_VIDEO_AVC);
         mEncoder.configure(format, null, null, MediaCodec.CONFIGURE_FLAG_ENCODE);
@@ -95,6 +117,13 @@ public class VideoEncoder {
                 mTrackIndex = mMuxer.addTrack(newFormat);
                 mMuxer.start();
                 mMuxerStarted = true;
+
+                byte[] SPS = newFormat.getByteBuffer("csd-0").array();
+                byte[] PPS = newFormat.getByteBuffer("csd-1").array();
+                Log.e(TAG," onOutputFormatChanged  SPS  "+ bytesToHex(SPS));
+                Log.e(TAG," onOutputFormatChanged  PPS  "+ bytesToHex(PPS));
+                mDataCallback.outputFormatData(SPS, PPS);
+
             } else if (encoderStatus < 0) {
                 Log.d(TAG, "unexpected result from encoder.dequeueOutputBuffer: " + encoderStatus);
             } else {
@@ -111,6 +140,8 @@ public class VideoEncoder {
                     if (!mMuxerStarted) {
                         throw new RuntimeException("muxer hasn't started");
                     }
+                    mDataCallback.encodedData(encodedData, mBufferInfo);
+
                     encodedData.position(mBufferInfo.offset);
                     encodedData.limit(mBufferInfo.offset + mBufferInfo.size);
                     mMuxer.writeSampleData(mTrackIndex, encodedData, mBufferInfo);
@@ -129,5 +160,40 @@ public class VideoEncoder {
                 }
             }
         }
+    }
+
+    /**
+     * 字节数组转Hex
+     * @param bytes 字节数组
+     * @return Hex
+     */
+    public static String bytesToHex(byte[] bytes)
+    {
+        StringBuffer sb = new StringBuffer();
+        if (bytes != null && bytes.length > 0)
+        {
+            for (int i = 0; i < bytes.length; i++) {
+                String hex = byteToHex(bytes[i]);
+                sb.append(hex);
+            }
+        }
+        return sb.toString();
+    }
+
+    /**
+     * Byte字节转Hex
+     * @param b 字节
+     * @return Hex
+     */
+    public static String byteToHex(byte b)
+    {
+        String hexString = Integer.toHexString(b & 0xFF);
+        //由于十六进制是由0~9、A~F来表示1~16，所以如果Byte转换成Hex后如果是<16,就会是一个字符（比如A=10），通常是使用两个字符来表示16进制位的,
+        //假如一个字符的话，遇到字符串11，这到底是1个字节，还是1和1两个字节，容易混淆，如果是补0，那么1和1补充后就是0101，11就表示纯粹的11
+        if (hexString.length() < 2)
+        {
+            hexString = new StringBuilder(String.valueOf(0)).append(hexString).toString();
+        }
+        return hexString.toUpperCase();
     }
 }

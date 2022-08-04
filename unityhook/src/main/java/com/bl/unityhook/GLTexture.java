@@ -145,6 +145,7 @@ public class GLTexture {
     Runnable runnable = new Runnable() {
         @Override
         public void run() {
+            handler.postDelayed(this, 33);
             if (mRecordDrawer != null){
                 mRecordDrawer.draw();
             }
@@ -161,7 +162,7 @@ public class GLTexture {
     }
 
     public boolean sendCaptureVideo(int[] ints) {
-        mCameraTextureId = ints[0];
+        mCameraTextureId = ints[1];
         handler = new Handler();
 
         Runnable initRunnable = new Runnable() {
@@ -175,21 +176,14 @@ public class GLTexture {
         };
         initRunnable.run();
 //        handler.post(initRunnable);
-//        handler.postDelayed(runnable, 100);
-
-//        handler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                mRecordDrawer.startRecord();
-//            }
-//        }, 500);
+        handler.postDelayed(runnable, 500);
 
 //        handler.postDelayed(new Runnable() {
 //            @Override
 //            public void run() {
 //                mRecordDrawer.stopRecord();
 //            }
-//        }, 50000);
+//        }, 5000);
 
         return true;
     }
