@@ -58,7 +58,7 @@ window.onload = function() {
             }
         }
      });
-     var ws = new WebSocket("ws://192.168.3.120:12388");
+     var ws = new WebSocket("ws://192.168.3.106:12388");
     //  var ws = new WebSocket(socketURL);
      ws.binaryType = 'arraybuffer';
      ws.addEventListener('message',function(event) {
@@ -67,14 +67,23 @@ window.onload = function() {
         // Decode an Uint8Array (browser) or Buffer (node) to a message
         var message = Msg.decode(vDara);
         console.log(message)
-        // ... do something with message
-        if(vDara.byteLength == 0){
+        switch (message.type) {
+            case 0:
+                console.log(message.controlHandleCoordinate)
+                break;
+        
+            default:
+                // ... do something with message
+                        if(vDara.byteLength == 0){
 
-        }else{
-            jmuxer.feed({
-                video: message.videoStream
-            });
+                }else{
+                    jmuxer.feed({
+                        video: message.videoStream
+                    });
+                }
+                break;
         }
+        
         
      });
 
