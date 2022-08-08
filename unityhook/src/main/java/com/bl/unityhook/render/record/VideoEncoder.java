@@ -7,6 +7,8 @@ import android.media.MediaMuxer;
 import android.util.Log;
 import android.view.Surface;
 
+import org.json.JSONObject;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -20,6 +22,8 @@ public class VideoEncoder {
         void encodedData(ByteBuffer encodedData, MediaCodec.BufferInfo mBufferInfo);
 
         void outputFormatData(byte[] sps, byte[] pps);
+
+        void controlHandleCoordinateData(JSONObject jsonObject);
     }
 
     public static DataCallback mDataCallback;
@@ -122,7 +126,9 @@ public class VideoEncoder {
                 byte[] PPS = newFormat.getByteBuffer("csd-1").array();
                 Log.e(TAG," onOutputFormatChanged  SPS  "+ bytesToHex(SPS));
                 Log.e(TAG," onOutputFormatChanged  PPS  "+ bytesToHex(PPS));
-                mDataCallback.outputFormatData(SPS, PPS);
+                if(mDataCallback != null){
+                    mDataCallback.outputFormatData(SPS, PPS);
+                }
 
             } else if (encoderStatus < 0) {
                 Log.d(TAG, "unexpected result from encoder.dequeueOutputBuffer: " + encoderStatus);
@@ -140,8 +146,9 @@ public class VideoEncoder {
                     if (!mMuxerStarted) {
                         throw new RuntimeException("muxer hasn't started");
                     }
-                    mDataCallback.encodedData(encodedData, mBufferInfo);
-
+                    if(mDataCallback != null){
+                        mDataCallback.encodedData(encodedData, mBufferInfo);
+                    }
                     encodedData.position(mBufferInfo.offset);
                     encodedData.limit(mBufferInfo.offset + mBufferInfo.size);
                     mMuxer.writeSampleData(mTrackIndex, encodedData, mBufferInfo);

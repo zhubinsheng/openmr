@@ -94,22 +94,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private TextView textView;
+    private VideoEncoder.DataCallback vd = new VideoEncoder.DataCallback() {
+        @Override
+        public void encodedData(ByteBuffer encodedData, MediaCodec.BufferInfo mBufferInfo) {
+            sendVideoStream(encodedData, mBufferInfo);
+        }
+
+        @Override
+        public void outputFormatData(byte[] sps, byte[] pps) {
+            readyOutputFormatData(sps, pps);
+        }
+
+        @Override
+        public void controlHandleCoordinateData(JSONObject jsonObject) {
+            sendControlHandleCoordinateButton(jsonObject);
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         GLTexture.getInstance().setContext(getApplicationContext());
-        VideoEncoder.mDataCallback = new VideoEncoder.DataCallback() {
-            @Override
-            public void encodedData(ByteBuffer encodedData, MediaCodec.BufferInfo mBufferInfo) {
-                sendVideoStream(encodedData, mBufferInfo);
-            }
-
-            @Override
-            public void outputFormatData(byte[] sps, byte[] pps) {
-                readyOutputFormatData(sps, pps);
-            }
-        };
+        VideoEncoder.mDataCallback = vd;
+        UnityHookObj.mDataCallback = vd;
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -259,17 +267,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sendOutputFormatData(byte[] b) {
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                MsgProto.Msg msgProto = MsgProto.Msg
-                        .newBuilder()
-                        .setType(MsgProto.Msg.MsgType.VideoOutputFormat)
-                        .setVideoStream(ByteString.copyFrom(b))
-                        .build();
-                sendMsg(msgProto.toByteArray());
-            }
-        });
+        if (b != null){
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    MsgProto.Msg msgProto = MsgProto.Msg
+                            .newBuilder()
+                            .setType(MsgProto.Msg.MsgType.VideoOutputFormat)
+                            .setVideoStream(ByteString.copyFrom(b))
+                            .build();
+                    sendMsg(msgProto.toByteArray());
+                }
+            });
+        }
     }
 
     public void sendVideoStream(ByteBuffer encodedData, MediaCodec.BufferInfo mBufferInfo) {
@@ -290,25 +300,30 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void sendControlHandleCoordinateButton(View view) {
+    public void sendControlHandleCoordinateButton(JSONObject jsonObject) {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                MsgProto.Msg msgProto = MsgProto.Msg
-                        .newBuilder()
-                        .setType(MsgProto.Msg.MsgType.ControlHandleCoordinate)
-                        .setControlHandleCoordinate
-                                (
-                                MsgProto.ControlHandleCoordinate
-                                        .newBuilder()
-                                        .setPosX(1.1f)
-                                        .setPosY(2.2f)
-                                        .setPosZ(3.3f)
-                                        .setPitchAngle(4.4f)
-                                        .setYawAngle(5.5f)
-                                        .setRollAngle(6.6f)
-                                )
-                        .build();
+                MsgProto.Msg msgProto = null;
+                try {
+                    msgProto = MsgProto.Msg
+                            .newBuilder()
+                            .setType(MsgProto.Msg.MsgType.ControlHandleCoordinate)
+                            .setControlHandleCoordinate
+                                    (
+                                    MsgProto.ControlHandleCoordinate
+                                            .newBuilder()
+                                            .setPosX( ((Double) jsonObject.get("poseX")).floatValue() )
+                                            .setPosY( ((Double) jsonObject.get("poseY")).floatValue() )
+                                            .setPosZ( ((Double) jsonObject.get("poseZ")).floatValue() )
+                                            .setPitchAngle( ((Double) jsonObject.get("rotationX")).floatValue() )
+                                            .setYawAngle( ((Double) jsonObject.get("rotationY")).floatValue() )
+                                            .setRollAngle( ((Double) jsonObject.get("rotationZ")).floatValue() )
+                                    )
+                            .build();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 
                 sendMsg(msgProto.toByteArray());
             }

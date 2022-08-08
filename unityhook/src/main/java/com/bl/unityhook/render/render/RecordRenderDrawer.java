@@ -204,9 +204,8 @@ public class RecordRenderDrawer extends BaseRenderDrawer implements Runnable{
                     }
                 }
 
-            RtspServer.getInstance().prepareStreamRtp();
-            surface = RtspServer.getInstance().startStreamRtp("rtsp://111.229.8.130:28554/live/99",
-                    width, height, 1200 * 1024);
+//            RtspServer.getInstance().prepareStreamRtp();
+//            surface = RtspServer.getInstance().startStreamRtp("rtsp://111.229.8.130:28554/live/99", width, height, 1200 * 1024);
 
             mEglHelper = new EGLHelper();
             mEglHelper.createGL(context);

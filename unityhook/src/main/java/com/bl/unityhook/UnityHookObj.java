@@ -4,6 +4,8 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 
+import com.bl.unityhook.render.record.VideoEncoder;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -14,6 +16,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li/> WARNING! 不要轻易变动包名、路径、单例函数、函数签名等。此处为函数名约束，同Unity通讯用！！
  */
 public class UnityHookObj {
+
+    public static VideoEncoder.DataCallback mDataCallback;
+
     private static final AtomicReference<UnityHookObj> atomicRef = new AtomicReference<>();
 
     private static final String TAG = "UnityHookObj";
@@ -66,14 +71,18 @@ public class UnityHookObj {
     }
 
     public String getCalibrationParams() {
+//        poseX=poseX+0.01f;
+//        poseY=poseY+0.01f;
+//        poseZ=poseZ+0.01f;
+
         JSONObject jsonObject = new JSONObject();
         try {
             jsonObject.put("poseX", poseX);
             jsonObject.put("poseY", poseY);
             jsonObject.put("poseZ", poseZ);
-            jsonObject.put("rotationX", 100);
-            jsonObject.put("rotationY", 100);
-            jsonObject.put("rotationZ", 100);
+            jsonObject.put("rotationX", 0);
+            jsonObject.put("rotationY", 70);
+            jsonObject.put("rotationZ", 0);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -90,17 +99,19 @@ public class UnityHookObj {
         return true;
     }
 
-    public boolean sendControlHandleCoordinate(String json) {
-        Log.d(TAG, "sendControlHandleCoordinate:" + json.length());
+    public void sendControlHandleCoordinate(String json) {
+        Log.d(TAG, "sendControlHandleCoordinate:" + json.length() + "\r\n" + json);
+        // {"poseX":0.14069510996341706,"poseY":-0.23511286079883576,"poseZ":0.11220527440309525,
+        // "rotationX":-0.13770142197608949,"rotationY":-0.11295188218355179,"rotationZ":0.07818758487701416}
         try {
             JSONObject jsonObject = new JSONObject(json);
 
             Log.d(TAG, "sendControlHandleCoordinate:" + jsonObject.get("poseX"));
             Log.d(TAG, "sendControlHandleCoordinate:" + jsonObject.get("rotationX"));
-
+            mDataCallback.controlHandleCoordinateData(jsonObject);
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return true;
+//        return true;
     }
 }

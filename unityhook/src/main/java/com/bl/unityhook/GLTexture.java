@@ -145,7 +145,7 @@ public class GLTexture {
     Runnable runnable = new Runnable() {
         @Override
         public void run() {
-            handler.postDelayed(this, 33);
+//            handler.postDelayed(this, 33);
             if (mRecordDrawer != null){
                 mRecordDrawer.draw();
             }
@@ -178,12 +178,12 @@ public class GLTexture {
 //        handler.post(initRunnable);
         handler.postDelayed(runnable, 500);
 
-//        handler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                mRecordDrawer.stopRecord();
-//            }
-//        }, 5000);
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mRecordDrawer.stopRecord();
+            }
+        }, 25000);
 
         return true;
     }
