@@ -170,21 +170,19 @@ public class GLTexture {
             public void run() {
                 mRecordDrawer = new RecordRenderDrawer(context);
                 mRecordDrawer.create();
-                mRecordDrawer.surfaceChangedSize(800, 800);
+                mRecordDrawer.surfaceChangedSize(1080, 1920);
                 mRecordDrawer.setInputTextureId(mCameraTextureId);
             }
         };
         initRunnable.run();
 //        handler.post(initRunnable);
-        handler.postDelayed(runnable, 500);
-
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mRecordDrawer.stopRecord();
-            }
-        }, 25000);
-
+//        handler.postDelayed(runnable, 500);
+//        handler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                mRecordDrawer.stopRecord();
+//            }
+//        }, 55000);
         return true;
     }
 

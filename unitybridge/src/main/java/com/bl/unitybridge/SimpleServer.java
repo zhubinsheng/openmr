@@ -54,7 +54,12 @@ public class SimpleServer extends WebSocketServer {
 
 	@Override
 	public void onError(WebSocket conn, Exception ex) {
-		System.err.println("an error occurred on connection " + conn.getRemoteSocketAddress()  + ":" + ex);
+		try {
+			ex.printStackTrace();
+			System.err.println("an error occurred on connection " + conn.getRemoteSocketAddress()  + ":" + ex);
+		}catch (Exception e){
+			e.printStackTrace();
+		}
 	}
 	
 	@Override

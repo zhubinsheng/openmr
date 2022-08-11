@@ -63,6 +63,11 @@ public class MainActivity extends AppCompatActivity {
             //stop service only if no streaming or recording
             stopService(new Intent(this, DisplayService.class));
         }
+        try {
+            server.stop();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -198,6 +203,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
     private void setMsgCallback() {
         server.setMsgCallback(new SimpleServer.MsgCallback() {
 /*            @Override
@@ -230,6 +236,10 @@ public class MainActivity extends AppCompatActivity {
                                 msgProto.getPhonePosture().getPosY(),
                                 msgProto.getPhonePosture().getPosZ());
 
+                        UnityHookObj.getInstance().setCalibrationParams2(
+                                msgProto.getPhonePosture().getPitchAngle(),
+                                msgProto.getPhonePosture().getYawAngle(),
+                                msgProto.getPhonePosture().getRollAngle());
                     }
 
                     if (msgProto.getType().getNumber() == MsgProto.Msg.MsgType.VideoOutputFormat_VALUE){

@@ -6,6 +6,7 @@ import android.opengl.EGL14;
 import android.opengl.EGLContext;
 import android.opengl.EGLSurface;
 import android.opengl.GLES30;
+import android.opengl.Matrix;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
@@ -16,6 +17,7 @@ import androidx.annotation.NonNull;
 
 import com.bl.unityhook.render.record.VideoEncoder;
 import com.bl.unityhook.render.util.EGLHelper;
+import com.bl.unityhook.render.util.GLUtils;
 import com.bl.unityhook.render.util.GlesUtil;
 
 import com.bl.unityhook.rtsp.CustomRtspServerDisplay;
@@ -265,6 +267,12 @@ public class RecordRenderDrawer extends BaseRenderDrawer implements Runnable{
         Looper.myLooper().quit();
     }
 
+    /**
+     * モデルビュー変換行列
+     */
+    @NonNull
+    protected final float[] mMvpMatrix = new float[16];
+
     @Override
     protected void onCreated() {
         mProgram = GlesUtil.createProgram(getVertexSource(), getFragmentSource());
@@ -276,6 +284,17 @@ public class RecordRenderDrawer extends BaseRenderDrawer implements Runnable{
         Log.d(TAG, "onCreated: af_Position " + af_Position);
         Log.d(TAG, "onCreated: s_Texture " + s_Texture);
         Log.e(TAG, "onCreated: error " + GLES30.glGetError());
+
+        // モデルビュー変換行列を初期化
+        Matrix.setIdentityM(mMvpMatrix, 0);
+    }
+
+    /**
+     * 現在のモデルビュー変換行列をxy平面で指定した角度回転させる
+     * @param degrees
+     */
+    public void rotate(final int degrees) {
+        GLUtils.rotate(mMvpMatrix, degrees);
     }
 
     @Override
@@ -289,6 +308,7 @@ public class RecordRenderDrawer extends BaseRenderDrawer implements Runnable{
         useProgram();
         viewPort(0, 0, width, height);
 
+
         GLES30.glEnableVertexAttribArray(av_Position);
         GLES30.glEnableVertexAttribArray(af_Position);
 //        GLES30.glVertexAttribPointer(av_Position, CoordsPerVertexCount, GLES30.GL_FLOAT, false, VertexStride, mVertexBuffer);
@@ -301,6 +321,9 @@ public class RecordRenderDrawer extends BaseRenderDrawer implements Runnable{
         GLES30.glActiveTexture(GLES30.GL_TEXTURE0);
         GLES30.glBindTexture(GLES30.GL_TEXTURE_2D, mTextureId);
         GLES30.glUniform1i(s_Texture, 0);
+
+//        rotate(270);
+
         // 绘制 GLES30.GL_TRIANGLE_STRIP:复用坐标
         GLES30.glDrawArrays(GLES30.GL_TRIANGLE_STRIP, 0, VertexCount);
         GLES30.glDisableVertexAttribArray(av_Position);

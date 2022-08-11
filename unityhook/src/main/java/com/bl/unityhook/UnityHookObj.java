@@ -48,8 +48,8 @@ public class UnityHookObj {
 
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("imageSizeHeight", 1080);
-            jsonObject.put("imageSizeWidth", 1080);
+            jsonObject.put("imageSizeHeight", 1242);
+            jsonObject.put("imageSizeWidth", 2688);
             jsonObject.put("FOV", 8);
             jsonObject.put("aspectRatio", 1);
             jsonObject.put("nearPlaneDistance", 1);
@@ -70,6 +70,16 @@ public class UnityHookObj {
         this.poseZ = poseZ;
     }
 
+    private float rotationX = 0;
+    private float rotationY = 70;
+    private float rotationZ = 0;
+
+    public void setCalibrationParams2(float rotationX, float rotationY, float rotationZ) {
+        this.rotationX = rotationX;
+        this.rotationY = rotationY;
+        this.rotationZ = rotationZ;
+    }
+
     public String getCalibrationParams() {
 //        poseX=poseX+0.01f;
 //        poseY=poseY+0.01f;
@@ -80,9 +90,9 @@ public class UnityHookObj {
             jsonObject.put("poseX", poseX);
             jsonObject.put("poseY", poseY);
             jsonObject.put("poseZ", poseZ);
-            jsonObject.put("rotationX", 0);
-            jsonObject.put("rotationY", 70);
-            jsonObject.put("rotationZ", 0);
+            jsonObject.put("rotationX", rotationX);
+            jsonObject.put("rotationY", rotationY);
+            jsonObject.put("rotationZ", rotationZ);
         } catch (JSONException e) {
             e.printStackTrace();
         }
