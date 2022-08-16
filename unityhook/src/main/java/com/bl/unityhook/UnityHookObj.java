@@ -107,7 +107,7 @@ public class UnityHookObj {
     public boolean sendCaptureVideo(byte[] stream) {
         Log.d(TAG, "sendCaptureVideo:" + stream.length);
         return true;
-    }
+    } 
 
     public void sendControlHandleCoordinate(String json) {
         Log.d(TAG, "sendControlHandleCoordinate:" + json.length() + "\r\n" + json);
