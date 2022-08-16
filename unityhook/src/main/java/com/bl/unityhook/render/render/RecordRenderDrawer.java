@@ -350,7 +350,8 @@ public class RecordRenderDrawer extends BaseRenderDrawer implements Runnable{
                 "uniform sampler2D s_Texture;\n" +
                 "void main() {\n" +
                 "   vec4 tc = texture2D(s_Texture, v_texPo);\n" +
-                "   gl_FragColor = texture2D(s_Texture, v_texPo);\n" +
+//                "   gl_FragColor = texture2D(s_Texture, v_texPo);\n" +
+                "   gl_FragColor = texture2D(s_Texture, vec2(v_texPo.x, 1.0-v_texPo.y));\n" +
                 "}";
         return source;
     }
