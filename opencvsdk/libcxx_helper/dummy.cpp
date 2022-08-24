@@ -29,21 +29,21 @@ Java_org_opencv_pnp_PnpBridge_findObjects(JNIEnv *env, jobject thiz, jlong nativ
 
     // 2D image points. If you change the image, you need to change vector
     std::vector<cv::Point2d> image_points;
-    image_points.push_back( cv::Point2d(359, 391) );    // Nose tip
-    image_points.push_back( cv::Point2d(399, 561) );    // Chin
-    image_points.push_back( cv::Point2d(337, 297) );     // Left eye left corner
-    image_points.push_back( cv::Point2d(513, 301) );    // Right eye right corner
-    image_points.push_back( cv::Point2d(345, 465) );    // Left Mouth corner
-    image_points.push_back( cv::Point2d(453, 469) );    // Right mouth corner
+    image_points.push_back( cv::Point2d(545, 1133) );    // Nose tip
+    image_points.push_back( cv::Point2d(335, 315) );    // Chin
+    image_points.push_back( cv::Point2d(953, 697) );     // Left eye left corner
+    image_points.push_back( cv::Point2d(862, 241) );    // Right eye right corner
+    image_points.push_back( cv::Point2d(800, 2090) );    // Left Mouth corner
+    image_points.push_back( cv::Point2d(293, 1655) );    // Right mouth corner
 
     // 3D model points.
     std::vector<cv::Point3d> model_points;
-    model_points.push_back(cv::Point3d(0.0f, 0.0f, 0.0f));               // Nose tip
-    model_points.push_back(cv::Point3d(0.0f, -330.0f, -65.0f));          // Chin
-    model_points.push_back(cv::Point3d(-225.0f, 170.0f, -135.0f));       // Left eye left corner
-    model_points.push_back(cv::Point3d(225.0f, 170.0f, -135.0f));        // Right eye right corner
-    model_points.push_back(cv::Point3d(-150.0f, -150.0f, -125.0f));      // Left Mouth corner
-    model_points.push_back(cv::Point3d(150.0f, -150.0f, -125.0f));       // Right mouth corner
+    model_points.push_back(cv::Point3d(0.0, -2.0, -95.0));               // Nose tip
+    model_points.push_back(cv::Point3d (-6.0, -23.0, -58.0));          // Chin
+    model_points.push_back(cv::Point3d(15.0, -18.0, -81.0));       // Left eye left corner
+    model_points.push_back(cv::Point3d(13.0, -39.0, -93.0));        // Right eye right corner
+    model_points.push_back(cv::Point3d(7.0, 27.0, -63.0));      // Left Mouth corner
+    model_points.push_back(cv::Point3d(-11.0, 21.0, -93.0));       // Right mouth corner
 
     //f=8
     //dx=0.01
@@ -94,7 +94,8 @@ Java_org_opencv_pnp_PnpBridge_findObjects(JNIEnv *env, jobject thiz, jlong nativ
 extern "C"
 JNIEXPORT void JNICALL
 Java_org_opencv_pnp_PnpBridge_pnp(JNIEnv *env, jobject thiz) {
-    cv::Mat im = cv::imread("/sdcard/aaaaa/headPose.jpg");
+//    cv::Mat im = cv::imread("/sdcard/aaaaa/headPose.jpg");
+    cv::Mat im = cv::imread("/sdcard/aaaaa/01.png");
 
     // Camera internals
     double focal_length = im.cols; // Approximate focal length.
@@ -107,19 +108,21 @@ Java_org_opencv_pnp_PnpBridge_pnp(JNIEnv *env, jobject thiz) {
 
     pnPsolver.SetDistortionMatrix(0,0,0,0);
 
-    pnPsolver.Points2D.push_back( cv::Point2d(359, 391) );    // Nose tip
-    pnPsolver.Points2D.push_back( cv::Point2d(399, 561) );    // Chin
-    pnPsolver.Points2D.push_back( cv::Point2d(337, 297) );     // Left eye left corner
-    pnPsolver.Points2D.push_back( cv::Point2d(513, 301) );    // Right eye right corner
-    pnPsolver.Points2D.push_back( cv::Point2d(345, 465) );    // Left Mouth corner
-    pnPsolver.Points2D.push_back( cv::Point2d(453, 469) );    // Right mouth corner
+    pnPsolver.Points2D.push_back( cv::Point2d(545, 1133) );    // Nose tip
+    pnPsolver.Points2D.push_back( cv::Point2d(335, 315) );    // Chin
+    pnPsolver.Points2D.push_back( cv::Point2d(953, 697) );     // Left eye left corner
+    pnPsolver.Points2D.push_back( cv::Point2d(862, 241) );    // Right eye right corner
+    pnPsolver.Points2D.push_back( cv::Point2d(800, 2090) );    // Left Mouth corner
+    pnPsolver.Points2D.push_back( cv::Point2d(293, 1655) );    // Right mouth corner
 
-    pnPsolver.Points3D.push_back(cv::Point3d(0.0f, 0.0f, 0.0f));               // Nose tip
-    pnPsolver.Points3D.push_back(cv::Point3d(0.0f, -330.0f, -65.0f));          // Chin
-    pnPsolver.Points3D.push_back(cv::Point3d(-225.0f, 170.0f, -135.0f));       // Left eye left corner
-    pnPsolver.Points3D.push_back(cv::Point3d(225.0f, 170.0f, -135.0f));        // Right eye right corner
-    pnPsolver.Points3D.push_back(cv::Point3d(-150.0f, -150.0f, -125.0f));      // Left Mouth corner
-    pnPsolver.Points3D.push_back(cv::Point3d(150.0f, -150.0f, -125.0f));       // Right mouth corner
+    // 3D model points.
+    std::vector<cv::Point3d> model_points;
+    pnPsolver.Points3D.push_back(cv::Point3d(0.0, -2.0, -95.0));               // Nose tip
+    pnPsolver.Points3D.push_back(cv::Point3d (-6.0, -23.0, -58.0));          // Chin
+    pnPsolver.Points3D.push_back(cv::Point3d(15.0, -18.0, -81.0));       // Left eye left corner
+    pnPsolver.Points3D.push_back(cv::Point3d(13.0, -39.0, -93.0));        // Right eye right corner
+    pnPsolver.Points3D.push_back(cv::Point3d(7.0, 27.0, -63.0));      // Left Mouth corner
+    pnPsolver.Points3D.push_back(cv::Point3d(-11.0, 21.0, -93.0));       // Right mouth corner
 
     int result = pnPsolver.Solve(SOLVEPNP_ITERATIVE);
 

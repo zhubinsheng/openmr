@@ -7,6 +7,7 @@ import android.opengl.GLES20;
 import android.opengl.GLES30;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.View;
 
 import com.dyman.easyshow3d.bean.BaseBuilderObject;
 import com.dyman.easyshow3d.bean.ModelObject;
@@ -184,7 +185,7 @@ public class Stl3DRenderDrawer extends BaseRenderDrawer{
             maxSize = modelObject.maxZ-modelObject.minZ;
         }
         if (maxSize > 20f) {    //大于20f，缩小模型
-            wholeScale = 18f/maxSize;
+            wholeScale = 8f/maxSize;
         } else if(maxSize < 10f) {  //小于10f，放大模型
             wholeScale = 15f/maxSize;
         }
@@ -194,6 +195,41 @@ public class Stl3DRenderDrawer extends BaseRenderDrawer{
     protected void clearFrame() {
         // 清除深度缓冲与颜色缓冲
         GLES20.glClear(GLES20.GL_DEPTH_BUFFER_BIT | GLES20.GL_COLOR_BUFFER_BIT);
+    }
+
+    private float x = 0;
+    private float y = -2f;
+    private float z = -50f;
+
+    public View.OnClickListener getOnClickListener() {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (v.getId()){
+                    case R.id.x:
+                        x++;
+                        break;
+                    case R.id.y:
+                        y++;
+                        break;
+                    case R.id.z:
+                        z++;
+                        break;
+
+                    case R.id._x:
+                        x--;
+                        break;
+                    case R.id._y:
+                        y--;
+                        break;
+                    case R.id._z:
+                        z--;
+                        break;
+                }
+
+                Log.d(TAG, "x"+x+"y"+y+"z"+z);
+            }
+        };
     }
 
     /**
@@ -231,6 +267,22 @@ public class Stl3DRenderDrawer extends BaseRenderDrawer{
             MatrixState.setProjectFrustum(-ratio, ratio, -1, 1, 2, 100);
             // 调用此方法产生摄像机9参数位置矩阵
             MatrixState.setCamera(0,0,0, 0f,0f,-1f, 0f,1.0f,0.0f);
+
+/*
+        Rotation Vector:
+             [[-0.18793037]
+             [-0.49210108]
+             [ 3.07295668]]
+            Translation Vector:
+ [[-10.38211095]
+ [-27.57128245]
+ [ 31.76307233]]
+
+ E/pnp-jni: Oc.x: 7
+E/pnp-jni: Oc.y: 3
+E/pnp-jni: Oc.z: 3
+
+*/
         }
 
         public void onDrawFrame() {
@@ -240,7 +292,7 @@ public class Stl3DRenderDrawer extends BaseRenderDrawer{
 
             // 画3D模型
             MatrixState.pushMatrix();
-            MatrixState.translate(0, -2f, -25f);
+            MatrixState.translate(x, y, z);
             MatrixState.rotate(modelObject.xRotateAngle, 0, 0, 1);
             MatrixState.rotate(yAngle + modelObject.yRotateAngle, 0, 1, 0);
             MatrixState.rotate(zAngle + modelObject.zRotateAngle, 1, 0, 0);

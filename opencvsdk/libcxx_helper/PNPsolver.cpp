@@ -4,6 +4,16 @@
 
 #include "PNPsolver.h"
 #include<opencv2\opencv.hpp>
+#include<android/log.h>
+#include "PNPsolver.h"
+
+#define TAG "PNPsolver" // 这个是自定义的LOG的标识
+#define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG,TAG ,__VA_ARGS__) // 定义LOGD类型
+#define LOGI(...) __android_log_print(ANDROID_LOG_INFO,TAG ,__VA_ARGS__) // 定义LOGI类型
+#define LOGW(...) __android_log_print(ANDROID_LOG_WARN,TAG ,__VA_ARGS__) // 定义LOGW类型
+#define LOGE(...) __android_log_print(ANDROID_LOG_ERROR,TAG ,__VA_ARGS__) // 定义LOGE类型
+#define LOGF(...) __android_log_print(ANDROID_LOG_FATAL,TAG ,__VA_ARGS__) // 定义LOGF类型
+
 using namespace cv;
 PNPsolver::PNPsolver()
 {
@@ -110,12 +120,20 @@ int PNPsolver::Solve(SolvePnPMethod method)
     double ty = tvec.ptr<double>(0)[1];
     double tz = tvec.ptr<double>(0)[2];
 
+    LOGE("tx: %D", tx);
+    LOGE("ty: %D", ty);
+    LOGE("tz: %D", tz);
+
     //x y z 为唯一向量在相机原始坐标系下的向量值
     //也就是向量OcOw在相机坐标系下的值
     double x = tx, y = ty, z = tz;
     Ow.x = x;
     Ow.y = y;
     Ow.z = z;
+
+    LOGE("Oc.x: %D",Oc.x);
+    LOGE("Oc.y: %D",Oc.y);
+    LOGE("Oc.z: %D",Oc.z);
 
     //进行三次反向旋转
     CodeRotateByZ(x, y, -1 * thetaz, x, y);
@@ -127,6 +145,10 @@ int PNPsolver::Solve(SolvePnPMethod method)
     Oc.x = x*-1;
     Oc.y = y*-1;
     Oc.z = z*-1;
+
+    LOGE("Oc.x: %D",Oc.x);
+    LOGE("Oc.y: %D",Oc.y);
+    LOGE("Oc.z: %D",Oc.z);
 
     return 0;
 }

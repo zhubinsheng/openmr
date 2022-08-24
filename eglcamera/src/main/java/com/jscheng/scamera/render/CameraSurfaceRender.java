@@ -6,6 +6,7 @@ import android.opengl.EGL14;
 import android.opengl.GLSurfaceView;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.View;
 
 import com.dyman.easyshow3d.bean.ModelObject;
 import com.jscheng.scamera.util.GlesUtil;
@@ -113,6 +114,10 @@ public class CameraSurfaceRender implements GLSurfaceView.Renderer {
 
     public boolean onTouchEvent(MotionEvent e) {
         return mRenderGroups.onTouchEvent(e);
+    }
+
+    public View.OnClickListener getOnClickListener() {
+        return mRenderGroups.getOnClickListener();
     }
 
     public interface CameraSufaceRenderCallback {

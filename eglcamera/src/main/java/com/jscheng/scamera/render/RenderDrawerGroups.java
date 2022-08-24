@@ -5,6 +5,7 @@ import android.opengl.EGLContext;
 import android.opengl.GLES30;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.View;
 
 import com.dyman.easyshow3d.bean.ModelObject;
 import com.jscheng.scamera.util.GlesUtil;
@@ -120,5 +121,9 @@ public class RenderDrawerGroups {
 
     public boolean onTouchEvent(MotionEvent e) {
         return stl3DRenderDrawer.onTouchEvent(e);
+    }
+
+    public View.OnClickListener getOnClickListener() {
+        return stl3DRenderDrawer.getOnClickListener();
     }
 }

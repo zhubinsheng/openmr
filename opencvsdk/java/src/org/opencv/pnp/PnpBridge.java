@@ -16,7 +16,7 @@ public class PnpBridge {
     }
 
     public void buildTemplate(Mat mRgba) {
-//        findObjects(1);
+        findObjects(1);
         pnp();
     }
 

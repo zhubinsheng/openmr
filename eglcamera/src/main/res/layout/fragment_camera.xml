@@ -10,12 +10,60 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <Button
+        android:id="@+id/x"
+        android:text="x"
+        android:layout_alignParentStart="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/y"
+        android:text="y"
+        android:layout_marginBottom="-75dp"
+        android:layout_alignBottom="@+id/x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/z"
+        android:text="z"
+        android:layout_marginBottom="-75dp"
+        android:layout_alignBottom="@+id/y"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <Button
+        android:id="@+id/_x"
+        android:text="-x"
+        android:layout_marginBottom="-75dp"
+        android:layout_alignBottom="@+id/z"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/_y"
+        android:text="-y"
+        android:layout_marginBottom="-75dp"
+        android:layout_alignBottom="@+id/_x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/_z"
+        android:text="-z"
+        android:layout_marginBottom="-75dp"
+        android:layout_alignBottom="@+id/_y"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
     <com.jscheng.scamera.widget.CameraProgressButton
         android:id="@+id/progress_btn"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         camera_progress_button:circle="@color/colorAccent"
         camera_progress_button:circle_line="@color/colorPrimary" />
 

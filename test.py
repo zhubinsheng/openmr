@@ -4,27 +4,45 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Read Image
-im = cv2.imread("headPose.jpg")
+im = cv2.imread("03.png")
+# im = cv2.imread("headPose.jpg")
 size = im.shape
 
 # 2D image points. If you change the image, you need to change vector
 image_points = np.array([
-    (359, 391),  # Nose tip
-    (399, 561),  # Chin
-    (337, 297),  # Left eye left corner
-    (513, 301),  # Right eye right corne
-    (345, 465),  # Left Mouth corner
-    (453, 469)  # Right mouth corner
+    # (359, 391),  # Nose tip
+    # (399, 561),  # Chin
+    # (337, 297),  # Left eye left corner
+    # (513, 301),  # Right eye right corne
+    # (345, 465),  # Left Mouth corner
+    # (453, 469)  # Right mouth corner
+    
+    (545, 1133),
+    (335, 315),
+    (953, 697),
+    (862, 241),
+    (800, 2090),
+    (293, 1655),
+ 
 ], dtype="double")
 
 # 3D model points.
 model_points = np.array([
-    (0.0, 0.0, 0.0),  # Nose tip
-    (0.0, -330.0, -65.0),  # Chin
-    (-225.0, 170.0, -135.0),  # Left eye left corner
-    (225.0, 170.0, -135.0),  # Right eye right corne
-    (-150.0, -150.0, -125.0),  # Left Mouth corner
-    (150.0, -150.0, -125.0)  # Right mouth corner
+    # (0.0, 0.0, 0.0),  # Nose tip
+    # (0.0, -330.0, -65.0),  # Chin
+    # (-225.0, 170.0, -135.0),  # Left eye left corner
+    # (225.0, 170.0, -135.0),  # Right eye right corne
+    # (-150.0, -150.0, -125.0),  # Left Mouth corner
+    # (150.0, -150.0, -125.0)  # Right mouth corner
+(0.0, -2.0, -95.0),
+(-6.0, -23.0, -58.0),
+(15.0, -18.0, -81.0),
+
+(13.0, -39.0, -93.0),
+(7.0, 27.0, -63.0),
+(-11.0, 21.0, -93.0),
+
+
 ])
 
 # Camera internals

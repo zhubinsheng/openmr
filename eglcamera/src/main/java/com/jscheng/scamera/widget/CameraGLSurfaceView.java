@@ -96,6 +96,10 @@ public class CameraGLSurfaceView extends GLSurfaceView implements CameraSurfaceR
         mRender.setModelObject(modelObject);
     }
 
+    public OnClickListener getOnClickListener() {
+        return mRender.getOnClickListener();
+    }
+
     public interface CameraGLSurfaceViewCallback {
         void onSurfaceViewCreate(SurfaceTexture texture);
         void onSurfaceViewChange(int width, int height);

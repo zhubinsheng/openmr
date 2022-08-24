@@ -90,6 +90,13 @@ public class CameraFragment extends Fragment implements CameraProgressButton.Lis
             }
         });
 
+        contentView.findViewById(R.id.x).setOnClickListener(mCameraView.getOnClickListener());
+        contentView.findViewById(R.id.y).setOnClickListener(mCameraView.getOnClickListener());
+        contentView.findViewById(R.id.z).setOnClickListener(mCameraView.getOnClickListener());
+        contentView.findViewById(R.id._x).setOnClickListener(mCameraView.getOnClickListener());
+        contentView.findViewById(R.id._y).setOnClickListener(mCameraView.getOnClickListener());
+        contentView.findViewById(R.id._z).setOnClickListener(mCameraView.getOnClickListener());
+
         ModelFactory.decodeFile(requireContext(), "/data/data/com.jscheng.scamera/cache/right.stl", new ModelLoaderListener() {
             @Override
             public void loadBegin() {
