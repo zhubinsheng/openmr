@@ -23,6 +23,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.dyman.easyshow3d.ModelFactory;
+import com.dyman.easyshow3d.bean.ModelObject;
+import com.dyman.easyshow3d.imp.ModelLoaderListener;
+import com.dyman.easyshow3d.view.ShowModelView;
+
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraActivity;
 import org.opencv.android.CameraBridgeViewBase;
@@ -96,6 +101,30 @@ public class MainActivity extends CameraActivity implements
 
         new OpenCVNativeLoader().init();
 
+        ShowModelView showModelView = findViewById(R.id.showModelView);
+
+        ModelFactory.decodeFile(this, "/data/data/com.example.open_cv/cache/left.stl", new ModelLoaderListener() {
+            @Override
+            public void loadedUpdate(float progress) {
+                Log.i(TAG, "模型解析进度： " + progress);
+            }
+
+            @Override
+            public void loadedFinish(ModelObject modelObject) {
+                if (modelObject != null) {
+                    //  解析完成，显示模型
+                    showModelView.setModelObject(modelObject);
+                }
+            }
+
+            @Override
+            public void loaderCancel() {
+            }
+
+            @Override
+            public void loaderFailure() {
+            }
+        });
     }
 
     private void buildGaussian(Mat mRgb) {
