@@ -50,10 +50,10 @@ public class UnityHookObj {
         try {
             jsonObject.put("imageSizeHeight", 1242);
             jsonObject.put("imageSizeWidth", 2688);
-            jsonObject.put("FOV", 8);
+            jsonObject.put("FOV", 30);
             jsonObject.put("aspectRatio", 1);
-            jsonObject.put("nearPlaneDistance", 1);
-            jsonObject.put("farPlaneDistance", 1);
+            jsonObject.put("nearPlaneDistance", 0.01);
+            jsonObject.put("farPlaneDistance", 500);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -118,7 +118,9 @@ public class UnityHookObj {
 
             Log.d(TAG, "sendControlHandleCoordinate:" + jsonObject.get("poseX"));
             Log.d(TAG, "sendControlHandleCoordinate:" + jsonObject.get("rotationX"));
-            mDataCallback.controlHandleCoordinateData(jsonObject);
+            if (mDataCallback != null){
+                mDataCallback.controlHandleCoordinateData(jsonObject);
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }

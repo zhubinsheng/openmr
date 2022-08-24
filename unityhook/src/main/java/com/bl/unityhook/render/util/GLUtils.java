@@ -27,12 +27,6 @@ import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
-import androidx.annotation.Nullable;
-
-import java.util.concurrent.Semaphore;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicInteger;
-
 public class GLUtils {
 	private static final boolean DEBUG = false;	// set false on production
 	private static final String TAG = GLUtils.class.getSimpleName();
@@ -49,7 +43,7 @@ public class GLUtils {
 	 * @param surface
 	 * @return
 	 */
-	public static boolean isSupportedSurface(@Nullable final Object surface) {
+	public static boolean isSupportedSurface(final Object surface) {
 		return ((surface instanceof Surface)
 			|| (surface instanceof SurfaceHolder)
 			|| (surface instanceof SurfaceTexture)

@@ -75,8 +75,8 @@ public class RenderDrawerGroups {
 
     public void draw() {
         if (mInputTexture == 0 || mFrameBuffer == 0) {
-            Log.e(TAG, "draw: mInputTexture is zero" + mInputTexture);
-            Log.e(TAG, "draw: mFramebuffer  is zero" + mFrameBuffer);
+            Log.d(TAG, "draw: mInputTexture is zero" + mInputTexture);
+            Log.d(TAG, "draw: mFramebuffer  is zero" + mFrameBuffer);
             return;
         }
         drawRender(mOriginalDrawer, true);

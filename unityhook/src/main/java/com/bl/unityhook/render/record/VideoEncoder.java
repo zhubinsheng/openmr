@@ -16,7 +16,20 @@ import java.nio.ByteBuffer;
 /**
  * Created By Chengjunsen on 2018/9/20
  */
-public class VideoEncoder {
+public class VideoEncoder implements Runnable{
+
+    protected final Object mSync = new Object();
+
+    /**
+     * Flag to request stop capturing
+     */
+    protected volatile boolean mRequestStop;
+
+    @Override
+    public void run() {
+        mRequestStop = false;
+        drainEncoder();
+    }
 
     public interface DataCallback{
         void encodedData(ByteBuffer encodedData, MediaCodec.BufferInfo mBufferInfo);
@@ -30,7 +43,7 @@ public class VideoEncoder {
 
     private static final String TAG = "VideoEncoder";
 
-    private static final int FRAME_RATE = 30;
+    private static final int FRAME_RATE = 60;
     private static final int IFRAME_INTERVAL = 1;
 
     private Surface mInputSurface;
@@ -73,6 +86,8 @@ public class VideoEncoder {
 
         mTrackIndex = -1;
         mMuxerStarted = false;
+
+        new Thread(this, getClass().getSimpleName()).start();
     }
 
     public Surface getInputSurface() {
@@ -93,20 +108,45 @@ public class VideoEncoder {
         }
     }
 
-    public void drainEncoder(boolean endOfStream) {
-        final int TIMEOUT_USEC = 10000;
-        if (endOfStream) {
-            Log.d(TAG, "sending EOS to encoder");
-            mEncoder.signalEndOfInputStream();
+    public boolean frameAvailableSoon() {
+//    	if (DEBUG) Log.v(TAG, "frameAvailableSoon");
+        synchronized (mSync) {
+            if (mRequestStop) {
+                return false;
+            }
+            mSync.notifyAll();
         }
+        return true;
+    }
+
+    public void stopRecording() {
+        synchronized (mSync) {
+            mRequestStop = true;	// for rejecting newer frame
+            mEncoder.signalEndOfInputStream();
+            mSync.notifyAll();
+            // We can not know when the encoding and writing finish.
+            // so we return immediately after request to avoid delay of caller thread
+        }
+    }
+
+    public void drainEncoder() {
+        final int TIMEOUT_USEC = 10000;
 
         while (true) {
             int encoderStatus = mEncoder.dequeueOutputBuffer(mBufferInfo, TIMEOUT_USEC);
             if (encoderStatus == MediaCodec.INFO_TRY_AGAIN_LATER) {
                 Log.d(TAG, "MediaCodec.INFO_TRY_AGAIN_LATER");
                 // no output available yet
-                if (!endOfStream) {
-                    break;
+                if (!mRequestStop) {
+                    synchronized (mSync) {
+                        try {
+                            mSync.wait();
+                        } catch (final InterruptedException e) {
+                            e.printStackTrace();
+                            break;
+                        }
+                    }
+//                    break;
                 } else {
                     Log.d(TAG, "no output available, spinning to await EOS");
                 }
@@ -124,8 +164,8 @@ public class VideoEncoder {
 
                 byte[] SPS = newFormat.getByteBuffer("csd-0").array();
                 byte[] PPS = newFormat.getByteBuffer("csd-1").array();
-                Log.e(TAG," onOutputFormatChanged  SPS  "+ bytesToHex(SPS));
-                Log.e(TAG," onOutputFormatChanged  PPS  "+ bytesToHex(PPS));
+                Log.d(TAG," onOutputFormatChanged  SPS  "+ bytesToHex(SPS));
+                Log.d(TAG," onOutputFormatChanged  PPS  "+ bytesToHex(PPS));
                 if(mDataCallback != null){
                     mDataCallback.outputFormatData(SPS, PPS);
                 }
@@ -158,10 +198,11 @@ public class VideoEncoder {
                 }
                 mEncoder.releaseOutputBuffer(encoderStatus, false);
                 if ((mBufferInfo.flags & MediaCodec.BUFFER_FLAG_END_OF_STREAM) != 0) {
-                    if (!endOfStream) {
+                    if (!mRequestStop) {
                         Log.w(TAG, "reached end of stream unexpectedly");
                     } else {
                         Log.d(TAG, "end of stream reached");
+                        release();
                     }
                     break;
                 }

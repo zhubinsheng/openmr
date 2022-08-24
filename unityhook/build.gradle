@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
+//apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 32
@@ -8,6 +8,14 @@ android {
         minSdkVersion 21
         targetSdkVersion 32
 
+        externalNativeBuild {
+            cmake {
+                cppFlags "-frtti -fexceptions -std=c++11"
+            }
+        }
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
     }
 
     buildTypes {
@@ -20,14 +28,20 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
 }
 
 dependencies {
-    implementation "androidx.core:core-ktx:1.8.0"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+//    implementation "androidx.core:core-ktx:1.8.0"
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    api 'com.github.pedroSG94:RTSP-Server:1.1.8'
-    api 'com.github.pedroSG94.rtmp-rtsp-stream-client-java:rtplibrary:54790ce5f8'
+//    api 'com.github.pedroSG94:RTSP-Server:1.1.8'
+//    api 'com.github.pedroSG94.rtmp-rtsp-stream-client-java:rtplibrary:54790ce5f8'
 //    api 'com.github.pedroSG94.rtmp-rtsp-stream-client-java:rtplibrary:2.1.9'
 
 }

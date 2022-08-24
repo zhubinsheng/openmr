@@ -4,7 +4,8 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "electron-builder --win --x64"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -17,9 +18,19 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^19.0.9"
+    "electron": "^19.0.9",
+    "electron-builder": "^23.3.3"
   },
   "dependencies": {
     "protobufjs": "^7.0.0"
+  },
+  "build": {
+    "appId": "com.blackshark.mr",
+    "mac": {
+      "target": ["dmg","zip"]
+    },
+    "win": {
+      "target": ["nsis","zip"]
+    }
   }
 }

@@ -13,6 +13,7 @@ import android.opengl.GLES30;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
+import android.os.Message;
 import android.util.Log;
 
 import com.bl.unityhook.render.render.RecordRenderDrawer;
@@ -23,9 +24,17 @@ import java.io.IOException;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class GLTexture {
+
+    static {
+        System.loadLibrary("glutil");
+    }
+
+    private native void test();
 
     private static final AtomicReference<GLTexture> atomicRef = new AtomicReference<>();
 
@@ -146,7 +155,7 @@ public class GLTexture {
         @Override
         public void run() {
 //            handler.postDelayed(this, 33);
-            if (mRecordDrawer != null){
+            if (mRecordDrawer != null && preparDone){
                 mRecordDrawer.draw();
             }
         }
@@ -155,12 +164,17 @@ public class GLTexture {
     private Handler handler;
     private int mCameraTextureId;
 
-    private RecordRenderDrawer mRecordDrawer;
+    private static RecordRenderDrawer mRecordDrawer;
+
+    private int fps = 0 ;
+    private int oldFps = 0 ;
 
     public void updateTime() {
         runnable.run();
+        fps++;
     }
 
+    private boolean preparDone = false;
     public boolean sendCaptureVideo(int[] ints) {
         mCameraTextureId = ints[1];
         handler = new Handler();
@@ -168,22 +182,46 @@ public class GLTexture {
         Runnable initRunnable = new Runnable() {
             @Override
             public void run() {
-                mRecordDrawer = new RecordRenderDrawer(context);
-                mRecordDrawer.create();
-                mRecordDrawer.surfaceChangedSize(1080, 1920);
+                mRecordDrawer.surfaceChangedSize(ints[2], ints[3]);
                 mRecordDrawer.setInputTextureId(mCameraTextureId);
+                mRecordDrawer.startRecord();
+                preparDone = true;
             }
         };
         initRunnable.run();
 //        handler.post(initRunnable);
 //        handler.postDelayed(runnable, 500);
-//        handler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                mRecordDrawer.stopRecord();
-//            }
-//        }, 55000);
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mRecordDrawer.stopRecord();
+            }
+        }, 15000);
+
+
+        Timer timer=new Timer();
+        TimerTask timerTask = new TimerTask() {
+            @Override
+            public void run() {
+                Log.d(TAG, "fps: " + (fps - oldFps));
+                oldFps = fps;
+            }
+        };
+        timer.schedule(timerTask,1000,1000); //延时1秒开始计时，每隔1秒计时
+
         return true;
     }
 
+    private static Runnable setUpEglContext = new Runnable() {
+        @Override
+        public void run() {
+            mRecordDrawer = new RecordRenderDrawer(null);
+            mRecordDrawer.create();
+        }
+    };
+
+    public static void initEglContext(int eventId) {
+        Log.d(TAG, "sendCaptureVideo(int eventId) todo");
+        setUpEglContext.run();
+    }
 }

@@ -16,7 +16,7 @@ public class OpenCVNativeLoader implements OpenCVInterface {
     public void init() {
         System.loadLibrary("opencv_java4");
         Logger.getLogger("org.opencv.osgi").log(Level.INFO, "Successfully loaded OpenCV native library.");
-        new PnpBridge().buildTemplate(null);
+//        new PnpBridge().buildTemplate(null);
 
     }
 }

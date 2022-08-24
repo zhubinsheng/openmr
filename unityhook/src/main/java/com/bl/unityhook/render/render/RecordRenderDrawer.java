@@ -8,29 +8,25 @@ import android.opengl.EGLSurface;
 import android.opengl.GLES30;
 import android.opengl.Matrix;
 import android.os.Handler;
+import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
-import android.view.Surface;
-
-import androidx.annotation.NonNull;
 
 import com.bl.unityhook.render.record.VideoEncoder;
 import com.bl.unityhook.render.util.EGLHelper;
 import com.bl.unityhook.render.util.GLUtils;
 import com.bl.unityhook.render.util.GlesUtil;
 
-import com.bl.unityhook.rtsp.CustomRtspServerDisplay;
-import com.bl.unityhook.rtsp.RtspServer;
-import com.pedro.rtsp.utils.ConnectCheckerRtsp;
-
 import java.io.File;
 import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Created By Chengjunsen on 2018/9/21
  */
-public class RecordRenderDrawer extends BaseRenderDrawer implements Runnable{
+public class RecordRenderDrawer extends BaseRenderDrawer{
     private final String TAG = getClass().getName();
 
     // 绘制的纹理 ID
@@ -55,7 +51,8 @@ public class RecordRenderDrawer extends BaseRenderDrawer implements Runnable{
         this.mTextureId = 0;
         this.isRecording = false;
         this.mContext = context;
-        new Thread(this).start();
+        init();
+//        new Thread(this).start();
     }
 
     @Override
@@ -72,6 +69,16 @@ public class RecordRenderDrawer extends BaseRenderDrawer implements Runnable{
     @Override
     public void create() {
         mEglContext = EGL14.eglGetCurrentContext();
+        Log.d(TAG, mEglContext.toString() + " Valid: " + isValidContext(mEglContext));
+    }
+
+    public boolean isValidContext(EGLContext mEglContext) {
+        // mContextはNonNullなのでnullチェック不要
+        return mEglContext == EGL14.EGL_NO_CONTEXT;
+    }
+
+    public void create(EGLContext mEglContext) {
+        this.mEglContext = mEglContext;
     }
 
     public void startRecord() {
@@ -108,13 +115,12 @@ public class RecordRenderDrawer extends BaseRenderDrawer implements Runnable{
         }
     }
 
-    @Override
-    public void run() {
-        Looper.prepare();
-        mMsgHandler = new MsgHandler();
-        //todo
-        startRecord();
-        Looper.loop();
+    public void init() {
+//        Looper.prepare();
+        HandlerThread j = new HandlerThread("Egl-Thread");
+        j.start();
+        mMsgHandler = new MsgHandler(j.getLooper());
+//        Looper.loop();
     }
 
     private class MsgHandler extends Handler {
@@ -125,8 +131,8 @@ public class RecordRenderDrawer extends BaseRenderDrawer implements Runnable{
         public static final int MSG_FRAME = 5;
         public static final int MSG_QUIT = 6;
 
-        public MsgHandler() {
-
+        public MsgHandler(Looper looper) {
+            super(looper);
         }
 
         @Override
@@ -159,59 +165,9 @@ public class RecordRenderDrawer extends BaseRenderDrawer implements Runnable{
     private void prepareVideoEncoder(EGLContext context, int width, int height) {
         try {
 
-            CustomRtspServerDisplay rtspServerCamera1 = new CustomRtspServerDisplay(mContext, false, new ConnectCheckerRtsp() {
-                    @Override
-                    public void onConnectionStartedRtsp(@NonNull String s) {
-
-                    }
-
-                    @Override
-                    public void onConnectionSuccessRtsp() {
-
-                    }
-
-                    @Override
-                    public void onConnectionFailedRtsp(@NonNull String s) {
-
-                    }
-
-                    @Override
-                    public void onNewBitrateRtsp(long l) {
-
-                    }
-
-                    @Override
-                    public void onDisconnectRtsp() {
-
-                    }
-
-                    @Override
-                    public void onAuthErrorRtsp() {
-
-                    }
-
-                    @Override
-                    public void onAuthSuccessRtsp() {
-
-                    }
-                }, 1935);
-
-                Surface surface = null;
-                if (!rtspServerCamera1.isStreaming()) {//640, 480, 30, 1200 * 1024, 0, 320
-                    if (rtspServerCamera1.isRecording() || rtspServerCamera1.prepareVideo(width, height,
-                            30, 1200 * 1024, 0, 320)) {
-                        surface = rtspServerCamera1.startStream("");
-
-                        rtspServerCamera1.startServer();
-                    }
-                }
-
-//            RtspServer.getInstance().prepareStreamRtp();
-//            surface = RtspServer.getInstance().startStreamRtp("rtsp://111.229.8.130:28554/live/99", width, height, 1200 * 1024);
-
             mEglHelper = new EGLHelper();
             mEglHelper.createGL(context);
-            mVideoPath = "/data/data/com.bl.unitybridge/files/" + "glvideo.mp4";
+            mVideoPath = "/sdcard/" + "glvideo.mp4";
             mVideoEncoder = new VideoEncoder(width, height, new File(mVideoPath));
 //            mEglSurface = mEglHelper.createWindowSurface(surface);
             mEglSurface = mEglHelper.createWindowSurface(mVideoEncoder.getInputSurface());
@@ -226,12 +182,12 @@ public class RecordRenderDrawer extends BaseRenderDrawer implements Runnable{
     }
 
     private void stopVideoEncoder() {
-        mVideoEncoder.drainEncoder(true);
+        mVideoEncoder.stopRecording();
+//        mVideoEncoder.drainEncoder(true);
         if (mEglHelper != null) {
             mEglHelper.destroySurface(mEglSurface);
             mEglHelper.destroyGL();
             mEglSurface = EGL14.EGL_NO_SURFACE;
-            mVideoEncoder.release();
             mEglHelper = null;
             mVideoEncoder = null;
         }
@@ -248,13 +204,15 @@ public class RecordRenderDrawer extends BaseRenderDrawer implements Runnable{
         }
     }
 
+
     private void drawFrame(long timeStamp) {
+        fps++;
         Log.d(TAG, "drawFrame: " + timeStamp );
         mEglHelper.makeCurrent(mEglSurface);
-        mVideoEncoder.drainEncoder(false);
+        mVideoEncoder.frameAvailableSoon();
+//        mVideoEncoder.drainEncoder(false);
         onDraw();
 //        sendImage(800, 800);
-
 //        mEglHelper.setPresentationTime(mEglSurface, timeStamp);
         mEglHelper.swapBuffers(mEglSurface);
     }
@@ -270,8 +228,10 @@ public class RecordRenderDrawer extends BaseRenderDrawer implements Runnable{
     /**
      * モデルビュー変換行列
      */
-    @NonNull
     protected final float[] mMvpMatrix = new float[16];
+
+    private int fps = 0 ;
+    private int oldFps = 0 ;
 
     @Override
     protected void onCreated() {
@@ -283,10 +243,20 @@ public class RecordRenderDrawer extends BaseRenderDrawer implements Runnable{
         Log.d(TAG, "onCreated: av_Position " + av_Position);
         Log.d(TAG, "onCreated: af_Position " + af_Position);
         Log.d(TAG, "onCreated: s_Texture " + s_Texture);
-        Log.e(TAG, "onCreated: error " + GLES30.glGetError());
+        Log.d(TAG, "onCreated: error " + GLES30.glGetError());
 
         // モデルビュー変換行列を初期化
-        Matrix.setIdentityM(mMvpMatrix, 0);
+//        Matrix.setIdentityM(mMvpMatrix, 0);
+
+        Timer timer=new Timer();
+        TimerTask timerTask = new TimerTask() {
+            @Override
+            public void run() {
+                Log.d(TAG, "drawFrame fps: " + (fps - oldFps));
+                oldFps = fps;
+            }
+        };
+        timer.schedule(timerTask,1000,1000); //延时1秒开始计时，每隔1秒计时
     }
 
     /**
@@ -307,7 +277,6 @@ public class RecordRenderDrawer extends BaseRenderDrawer implements Runnable{
         clear();
         useProgram();
         viewPort(0, 0, width, height);
-
 
         GLES30.glEnableVertexAttribArray(av_Position);
         GLES30.glEnableVertexAttribArray(af_Position);

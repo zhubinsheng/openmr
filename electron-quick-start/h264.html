@@ -31,14 +31,22 @@
 <span id="z">0</span>
 
 
+<input id="ip" type="text">
+<button onclick="Mstart()">连接</button>
 <script>
 var jmuxer;
 var Msg;
 var ws;
+var buffer;
+
+function Mstart() {
+    var value = document.getElementById('ip').value ;
+    initWs(value)
+}
+
 window.onload = function() {
 
     var protobuf = require("protobufjs");
-    var buffer;
     protobuf.load("./msg.proto", function (err, root) {
     if (err)
         throw err;
@@ -63,7 +71,6 @@ window.onload = function() {
 
     });
 
-    var socketURL = 'ws://localhost:8080';
     jmuxer = new JMuxer({
         node: 'player',
         mode: 'video',
@@ -76,7 +83,12 @@ window.onload = function() {
             }
         }
      });
-     ws = new WebSocket("ws://192.168.3.100:12388");
+
+ }
+
+ function initWs(ip) {
+    console.log('initWs ' + ip);
+    ws = new WebSocket("ws://" + ip + ":12388");
     //  var ws = new WebSocket(socketURL);
      ws.binaryType = 'arraybuffer';
      ws.addEventListener('message',function(event) {
