@@ -191,12 +191,12 @@ public class GLTexture {
         initRunnable.run();
 //        handler.post(initRunnable);
 //        handler.postDelayed(runnable, 500);
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mRecordDrawer.stopRecord();
-            }
-        }, 15000);
+//        handler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                mRecordDrawer.stopRecord();
+//            }
+//        }, 15000);
 
 
         Timer timer=new Timer();

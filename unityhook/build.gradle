@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-//apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 32
@@ -37,11 +37,11 @@ android {
 }
 
 dependencies {
-//    implementation "androidx.core:core-ktx:1.8.0"
-//    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.core:core-ktx:1.8.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-//    api 'com.github.pedroSG94:RTSP-Server:1.1.8'
-//    api 'com.github.pedroSG94.rtmp-rtsp-stream-client-java:rtplibrary:54790ce5f8'
-//    api 'com.github.pedroSG94.rtmp-rtsp-stream-client-java:rtplibrary:2.1.9'
+    api 'com.github.pedroSG94:RTSP-Server:1.1.8'
+    api 'com.github.pedroSG94.rtmp-rtsp-stream-client-java:rtplibrary:54790ce5f8'
+    api 'com.github.pedroSG94.rtmp-rtsp-stream-client-java:rtplibrary:2.1.9'
 
 }

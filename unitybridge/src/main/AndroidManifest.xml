@@ -79,10 +79,10 @@
             android:foregroundServiceType="mediaProjection"
             />
 
-        <activity
+<!--        <activity
             android:exported="true"
             android:name=".CameraDemoActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"/>-->
 
     </application>
 
