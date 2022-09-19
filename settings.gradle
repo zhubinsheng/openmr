@@ -1,10 +1,10 @@
 //include ':app'
 //include ':unitybridge'
 
-include ':opencvpnp'
-include ':opencvsdk'
+//include ':opencvpnp'
+//include ':opencvsdk'
 
-//include ':unityhook'
-//include ':unityLibrary'
+include ':unityhook'
+include ':unityLibrary'
 
-include ':eglcamera', ':easyshow3d'
+//include ':eglcamera', ':easyshow3d'

@@ -199,7 +199,7 @@ public class Stl3DRenderDrawer extends BaseRenderDrawer{
 
     private float x = 0;
     private float y = -2f;
-    private float z = -50f;
+    private float z = -150f;
 
     public View.OnClickListener getOnClickListener() {
         return new View.OnClickListener() {
@@ -264,9 +264,21 @@ public class Stl3DRenderDrawer extends BaseRenderDrawer{
             // 计算GLSurfaceView的宽高比
             float ratio = (float) width/height;
             // 调用次方法计算产生透视投影矩阵
-            MatrixState.setProjectFrustum(-ratio, ratio, -1, 1, 2, 100);
+            MatrixState.setProjectFrustum(-ratio, ratio, -1, 1, 2, 1000);
             // 调用此方法产生摄像机9参数位置矩阵
             MatrixState.setCamera(0,0,0, 0f,0f,-1f, 0f,1.0f,0.0f);
+
+            //eyex,eyey,eyez 代表相机在坐标轴的位置,centerX,centerY,centerZ代表物体的中心坐标，upX,upY,upZ代表相机往哪边看
+
+//            float cx,	//摄像机位置x
+//            float cy,   //摄像机位置y
+//            float cz,   //摄像机位置z
+//            float tx,   //摄像机目标点x
+//            float ty,   //摄像机目标点y
+//            float tz,   //摄像机目标点z
+//            float upx,  //摄像机UP向量X分量
+//            float upy,  //摄像机UP向量Y分量
+//            float upz   //摄像机UP向量Z分量
 
 /*
         Rotation Vector:
