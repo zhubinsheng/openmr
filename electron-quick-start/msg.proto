@@ -53,6 +53,10 @@ message CalibrationParams {
   float aspectRatio = 4;
   float nearPlaneDistance = 5;
   float farPlaneDistance = 6;
+
+  
+  float xFov  = 7;
+  float yFov  = 8;
 }
 
 message PhonePosture {

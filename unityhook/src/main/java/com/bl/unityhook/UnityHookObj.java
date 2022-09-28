@@ -37,23 +37,42 @@ public class UnityHookObj {
 
     private final Handler sMainHandler = new Handler(Looper.getMainLooper());
 
+     /*jsonObject.put("imageSizeWidth", 1920);
+    jsonObject.put("imageSizeHeight", 1442);
+    jsonObject.put("xFov", 78.78722158745441);
+    jsonObject.put("yFov", 61.59041647706971);
+    jsonObject.put("aspectRatio", 1920 / 1442);
+    jsonObject.put("nearPlaneDistance", 0.01);
+    jsonObject.put("farPlaneDistance", 1000);*/
+    private float xFOV = 78;
+    private float yFOV = 61;
+
+    public void setFov(float x, float y) {
+        this.xFOV = x;
+        this.yFOV = y;
+    }
+
     public String getInitCalibrationParams() {
         CalibrationParams calibrationParams = new CalibrationParams();
-        calibrationParams.imageSizeHeight = 1080;
-        calibrationParams.imageSizeWidth = 1080;
-        calibrationParams.FOV = 8;
-        calibrationParams.aspectRatio = 1;
-        calibrationParams.nearPlaneDistance = 1;
-        calibrationParams.farPlaneDistance = 1;
+        calibrationParams.imageSizeHeight = 1442;
+        calibrationParams.imageSizeWidth = 1920;
+        calibrationParams.xFOV = 60;
+        calibrationParams.yFOV = 60;
+
+        calibrationParams.aspectRatio = 1920f / 1442f;
+        calibrationParams.nearPlaneDistance = 0.01f;
+        calibrationParams.farPlaneDistance = 1000;
 
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("imageSizeHeight", 1242);
-            jsonObject.put("imageSizeWidth", 2688);
-            jsonObject.put("FOV", 30);
-            jsonObject.put("aspectRatio", 1);
+            jsonObject.put("imageSizeHeight", 1442);
+            jsonObject.put("imageSizeWidth", 1920);
+            jsonObject.put("xFOV", xFOV);
+            jsonObject.put("yFOV", yFOV);
+
+            jsonObject.put("aspectRatio", 1920 / 1442);
             jsonObject.put("nearPlaneDistance", 0.01);
-            jsonObject.put("farPlaneDistance", 500);
+            jsonObject.put("farPlaneDistance", 1000);
         } catch (JSONException e) {
             e.printStackTrace();
         }

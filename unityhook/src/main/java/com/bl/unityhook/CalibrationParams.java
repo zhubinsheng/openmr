@@ -3,7 +3,8 @@ package com.bl.unityhook;
 public class CalibrationParams {
     public int imageSizeWidth;
     public int imageSizeHeight;
-    public float FOV;
+    public float xFOV;
+    public float yFOV;
     public float aspectRatio;
     public float nearPlaneDistance;
     public float farPlaneDistance;

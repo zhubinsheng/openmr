@@ -226,6 +226,9 @@ public class MainActivity extends AppCompatActivity {
 
                     if (msgProto.getType().getNumber() == MsgProto.Msg.MsgType.CalibrationParams_VALUE){
                         LogUtils.d(msgProto.getCalibrationParams());
+
+                        UnityHookObj.getInstance().setFov(
+                                msgProto.getCalibrationParams().getXFov(), msgProto.getCalibrationParams().getYFov());
                     }
 
                     if (msgProto.getType().getNumber() == MsgProto.Msg.MsgType.PhonePosture_VALUE){
@@ -239,6 +242,7 @@ public class MainActivity extends AppCompatActivity {
                                 msgProto.getPhonePosture().getPitchAngle(),
                                 msgProto.getPhonePosture().getYawAngle(),
                                 msgProto.getPhonePosture().getRollAngle());
+
                     }
 
                     if (msgProto.getType().getNumber() == MsgProto.Msg.MsgType.VideoOutputFormat_VALUE){
